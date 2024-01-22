@@ -54,6 +54,11 @@ $body-bg-dark: #121212;
 @import 'bs/utilities/api';
 // scss-docs-end import-stack
 
+:root {
+	--background-noise: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=');
+	--background-base: #121212;
+}
+
 $icon-sizes: (
 	'large': 32px,
 	'medium': 16px,
@@ -72,7 +77,6 @@ $icon-sizes: (
 	.action {
 		margin-right: 24px;
 		cursor: pointer;
-
 		&.play-btn {
 			width: 56px;
 			height: 56px;
@@ -102,8 +106,16 @@ $icon-sizes: (
 }
 
 .table-row {
-	grid-template-columns: [index] var(--tracklist-index-column-width, 16px) [first] minmax(
-			120px,
-			var(--col1, 4fr)
-		) [last] minmax(120px, var(--col2, 1fr));
+	grid-gap: 16px;
+	display: grid;
+	padding: 0 16px;
+	grid-template-columns:
+		[index] var(--tracklist-index-column-width, 16px) [first] minmax(120px, var(--col1, 4fr))
+		[last] minmax(120px, var(--col2, 1fr));
+	height: 56px;
+
+	&[role='presentation'] {
+		height: 36px;
+		border-bottom: 1px solid currentColor;
+	}
 }
