@@ -1,0 +1,109 @@
+@import 'bs/mixins/banner';
+@include bsBanner('');
+
+// scss-docs-start import-stack
+// Configuration
+@import 'bs/functions';
+
+$primary: #1fdf64;
+$body-bg-dark: #121212;
+
+@import 'bs/variables';
+@import 'bs/variables-dark';
+@import 'bs/maps';
+@import 'bs/mixins';
+@import 'bs/utilities';
+
+// Layout & components
+@import 'bs/root';
+@import 'bs/reboot';
+@import 'bs/type';
+@import 'bs/images';
+@import 'bs/containers';
+@import 'bs/grid';
+@import 'bs/tables';
+@import 'bs/forms';
+@import 'bs/buttons';
+@import 'bs/transitions';
+@import 'bs/dropdown';
+@import 'bs/button-group';
+@import 'bs/nav';
+@import 'bs/navbar';
+@import 'bs/card';
+@import 'bs/accordion';
+@import 'bs/breadcrumb';
+@import 'bs/pagination';
+@import 'bs/badge';
+@import 'bs/alert';
+@import 'bs/progress';
+@import 'bs/list-group';
+@import 'bs/close';
+@import 'bs/toasts';
+@import 'bs/modal';
+@import 'bs/tooltip';
+@import 'bs/popover';
+@import 'bs/carousel';
+@import 'bs/spinners';
+@import 'bs/offcanvas';
+@import 'bs/placeholders';
+
+// Helpers
+@import 'bs/helpers';
+
+// Utilities
+@import 'bs/utilities/api';
+// scss-docs-end import-stack
+
+$icon-sizes: (
+	'large': 32px,
+	'medium': 16px,
+	'small': 14px,
+);
+
+@each $name, $size in $icon-sizes {
+	.icon-#{$name} {
+		display: inline-block;
+		width: $size;
+		height: $size;
+	}
+}
+
+.main-actions {
+	.action {
+		margin-right: 24px;
+		cursor: pointer;
+
+		&.play-btn {
+			width: 56px;
+			height: 56px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			color: #000;
+			margin-right: 32px;
+			svg {
+				width: 24px;
+			}
+			&:hover {
+				transform: scale(1.05);
+				color: #000;
+			}
+		}
+	}
+}
+
+.start-bg {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, var(--background-base) 100%),
+		var(--background-noise);
+	height: 232px;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+}
+
+.table-row {
+	grid-template-columns: [index] var(--tracklist-index-column-width, 16px) [first] minmax(
+			120px,
+			var(--col1, 4fr)
+		) [last] minmax(120px, var(--col2, 1fr));
+}
