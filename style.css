@@ -1,0 +1,117 @@
+body {
+  font-family: "Circular", sans-serif;
+  background-image: linear-gradient(0deg, rgb(18, 18, 18) 30%, rgb(44, 44, 42) 100%);
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+header {
+  margin-left: -15px;
+  background-color: black;
+  justify-content: center;
+  height: 100%;
+  padding-top: 10px;
+}
+header i:first-of-type {
+  color: #bebebe;
+}
+header a {
+  text-decoration: none;
+  color: #bebebe;
+}
+header ul {
+  list-style-type: none;
+  color: #bebebe;
+}
+header i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+header hr {
+  color: white;
+  width: 90%;
+  margin-left: 25px;
+  margin-right: auto;
+}
+
+main {
+  font-family: "Circular", sans-serif;
+}
+@media (max-width: 576px) {
+  main #artist-details h1#artist-name {
+    margin-left: 5.5rem !important;
+    font-size: 50px !important;
+  }
+}
+main #artist-details img {
+  background-size: cover;
+  width: 100%;
+  max-height: 350px;
+}
+main #artist-details #verified-account i {
+  color: #3D91F4;
+  font-size: 20px;
+}
+main #artist-details #artist-fans {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  text-align: center;
+}
+main #artist-details #artist-name {
+  top: 75%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+main #artist-details #verified-account {
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  text-align: center;
+}
+main a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+main p {
+  color: whitesmoke;
+}
+main #artist-details {
+  position: relative;
+}
+main #artist-name,
+main #artist-fans,
+main #verified-account {
+  position: absolute;
+  color: white;
+}
+main #artist-name {
+  top: 60%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+main #artist-fans {
+  bottom: 10px;
+  left: 10%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  text-align: center;
+}
+main #verified-account {
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  text-align: center;
+}
+main #verified-account i {
+  color: #3D91F4;
+}/*# sourceMappingURL=style.css.map */
