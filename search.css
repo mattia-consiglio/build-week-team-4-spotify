@@ -1,0 +1,28 @@
+.immagine {
+  width: 300px;
+  height: 300px;
+}
+
+.icon {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+input {
+  padding-left: 20px;
+}
+
+.input-container {
+  position: relative;
+  width: 200px;
+}
+
+input::placeholder {
+  padding-left: 20px;
+  width: 200px;
+}
+
+form {
+  width: 200px;
+}
