@@ -53,7 +53,7 @@
               </a>
             </div>
           </div>
-          <div class="col-8">
+          <div class="col-12 col-md-8">
             <div class="row mt-3">
               <div class="col d-flex justify-content-between">
                 <div class="d-flex flex-grow-1">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="dropdown">
                   <button
-                    class="btn btn-dark dropdown-toggle"
+                    class="btn btn-black dropdown-toggle"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -76,7 +76,7 @@
                       alt="avatar"
                       class="avatar rounded-3"
                     />
-                    UTENTE
+                    Utente
                   </button>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -89,7 +89,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="row annuncio p-3">
+              <div class="row annuncio p-3 d-none d-md-flex">
                 <div class="col-4">
                   <img
                     src="./assets/imgs/main/image-12.jpg"
@@ -102,8 +102,21 @@
                   <h2>VIOLA (Feat. Salmo)</h2>
                   <p>Fedez, Salmo</p>
                   <p>Ascolta il nuovo singolo di Fedez e Salmo!</p>
-                  <button type="button" class="btn btn-success">Play</button>
-                  <button type="button" class="btn btn-dark">Salva</button>
+                  <button
+                    type="button"
+                    class="btn btn-success roundel px-4 text-black"
+                  >
+                    Play
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-black border border-white roundel px-4 mx-1"
+                  >
+                    Salva
+                  </button>
+                  <a href="#" class="text-white mx-3">
+                    <i class="bi bi-three-dots"></i
+                  ></a>
                 </div>
                 <div class="col-1">
                   <button
@@ -118,10 +131,11 @@
             <div class="col buonasera mt-5">
               <h6 class="text-white">Buonasera</h6>
               <div class="row">
+                <!-- da mettere alla row qui sopra il gatter -->
                 <div class="col">
                   <div class="row">
-                    <div class="early col-4">
-                      <div class="row">
+                    <div class="col-6 col-md-4">
+                      <div class="row early">
                         <div class="col-3">
                           <img src="./assets/imgs/main/image-14.jpg" />
                         </div>
@@ -131,54 +145,54 @@
                       </div>
                     </div>
 
-                    <div class="early col-4">
+                    <div class="col-6 col-md-4">
                       <div class="row">
                         <div class="col-3">
                           <img src="./assets/imgs/search/image-12.jpg" />
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 early">
                           <p class="text-white">Be the young</p>
                         </div>
                       </div>
                     </div>
-                    <div class="early col-4">
+                    <div class="col-6 col-md-4">
                       <div class="row">
                         <div class="col-3">
                           <img src="./assets/imgs/main/image-19.jpg" />
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 early">
                           <p class="text-white">saggio vibes</p>
                         </div>
                       </div>
                     </div>
-                    <div class="early col-4">
+                    <div class="col-6 col-md-4">
                       <div class="row">
                         <div class="col-3">
                           <img src="./assets/imgs/main/image-15.jpg" />
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 early">
                           <p class="text-white">Brani che ti piacciono</p>
                         </div>
                       </div>
                     </div>
 
-                    <div class="early col-4">
+                    <div class="col-6 col-md-4">
                       <div class="row">
                         <div class="col-3">
                           <img src="./assets/imgs/main/image-18.jpg" />
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 early">
                           <p class="text-white">2021 lol</p>
                         </div>
                       </div>
                     </div>
 
-                    <div class="early col-4">
+                    <div class="col-6 col-md-4">
                       <div class="row">
-                        <div class="col-3">
+                        <div class="col">
                           <img src="./assets/imgs/main/image-2.jpg" />
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 early">
                           <p class="text-white">Deep dive with Ali Abdaal</p>
                         </div>
                       </div>
@@ -197,8 +211,10 @@
                   VISUALIZZA TUTTO
                 </button>
               </div>
-              <div class="row justify-content-center p-1">
-                <div class="col-2 p-1 m-1">
+              <div
+                class="row justify-content-center p-1 overflow-y-hidden flex-nowrap flex-lg-wrap"
+              >
+                <div class="col-4 col-md-2 p-1 m-1">
                   <div class="card h-100">
                     <img
                       src="./assets/imgs/main/image-9.jpg"
@@ -211,7 +227,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-2 p-1 m-1">
+                <div class="col-4 col-md-2 p-1 m-1">
                   <div class="card h-100">
                     <img
                       src="./assets/imgs/main/image-8.jpg"
@@ -224,7 +240,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-2 p-1 m-1">
+                <div class="col-4 col-md-2 p-1 m-1">
                   <div class="card h-100">
                     <img
                       src="./assets/imgs/main/image-6.jpg"
@@ -237,7 +253,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-2 p-1 m-1">
+                <div class="col-4 col-md-2 p-1 m-1">
                   <div class="card h-100">
                     <img
                       src="./assets/imgs/main/image-7.jpg"
@@ -250,7 +266,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-2 p-1 m-1">
+                <div class="col-4 col-md-2 p-1 m-1">
                   <div class="card h-100">
                     <img
                       src="./assets/imgs/main/image-11.jpg"
