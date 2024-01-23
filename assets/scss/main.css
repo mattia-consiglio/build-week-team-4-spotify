@@ -13438,7 +13438,17 @@ textarea.form-control-lg {
   grid-template-columns: [index] var(--tracklist-index-column-width, 16px) [first] minmax(120px, var(--col1, 4fr)) [last] minmax(120px, var(--col2, 1fr));
   height: 56px;
 }
-.table-row[role=presentation] {
+.table-row.table-header {
   height: 36px;
   border-bottom: 1px solid currentColor;
+  color: #a7a7a7;
+  margin-bottom: 16px;
+}
+.table-row .table-cell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }/*# sourceMappingURL=main.css.map */

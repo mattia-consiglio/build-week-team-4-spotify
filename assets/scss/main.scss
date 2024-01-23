@@ -114,8 +114,21 @@ $icon-sizes: (
 		[last] minmax(120px, var(--col2, 1fr));
 	height: 56px;
 
-	&[role='presentation'] {
+	&.table-header {
 		height: 36px;
 		border-bottom: 1px solid currentColor;
+		color: #a7a7a7;
+		margin-bottom: 16px;
 	}
+
+	.table-cell {
+		display: flex;
+		align-items: center;
+	}
+
+	// &:not(&.table-header):hover {
+	// 	button.opcity-0 {
+	// 		opacity: 1;
+	// 	}
+	// }
 }
