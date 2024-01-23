@@ -5,12 +5,14 @@
 
 .icon {
   position: absolute;
-  top: 5px;
+  top: 50%;
+  transform: translateY(-50%);
   left: 5px;
 }
 
-input {
-  padding-left: 20px;
+#search-input {
+  padding-left: 25px;
+  /* text-align: center; */
 }
 
 .input-container {
@@ -19,10 +21,16 @@ input {
 }
 
 input::placeholder {
-  padding-left: 20px;
   width: 200px;
 }
 
 form {
   width: 200px;
+}
+.altezza-brani {
+  max-height: 430px;
+}
+
+.icona-spotify {
+  width: 20px;
 }

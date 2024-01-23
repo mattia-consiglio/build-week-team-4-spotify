@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="search.css" />
   </head>
-  <body>
+  <body data-bs-theme="dark">
     <header>
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
@@ -30,142 +30,60 @@
                 placeholder="Cosa vuoi ascoltare?"
                 aria-label="Search"
               />
-              <button
+              <!-- <button
                 id="input-button"
                 class="btn btn-outline-success"
                 type="submit"
-              ></button>
+              ></button> -->
             </div>
           </form>
+        </div>
+        <div class="container-fluid d-flex justify-content-end">
+          <svg
+            data-encore-id="icon"
+            role="img"
+            aria-hidden="true"
+            class="icona-spotify pe-1"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"
+            ></path>
+          </svg>
+          <svg
+            data-encore-id="icon"
+            role="img"
+            aria-hidden="true"
+            data-testid="user-icon"
+            viewBox="0 0 16 16"
+            class="icona-spotify pe-1"
+          >
+            <path
+              d="M6.233.371a4.388 4.388 0 0 1 5.002 1.052c.421.459.713.992.904 1.554.143.421.263 1.173.22 1.894-.078 1.322-.638 2.408-1.399 3.316l-.127.152a.75.75 0 0 0 .201 1.13l2.209 1.275a4.75 4.75 0 0 1 2.375 4.114V16H.382v-1.143a4.75 4.75 0 0 1 2.375-4.113l2.209-1.275a.75.75 0 0 0 .201-1.13l-.126-.152c-.761-.908-1.322-1.994-1.4-3.316-.043-.721.077-1.473.22-1.894a4.346 4.346 0 0 1 .904-1.554c.411-.448.91-.807 1.468-1.052zM8 1.5a2.888 2.888 0 0 0-2.13.937 2.85 2.85 0 0 0-.588 1.022c-.077.226-.175.783-.143 1.323.054.921.44 1.712 1.051 2.442l.002.001.127.153a2.25 2.25 0 0 1-.603 3.39l-2.209 1.275A3.25 3.25 0 0 0 1.902 14.5h12.196a3.25 3.25 0 0 0-1.605-2.457l-2.209-1.275a2.25 2.25 0 0 1-.603-3.39l.127-.153.002-.001c.612-.73.997-1.52 1.052-2.442.032-.54-.067-1.097-.144-1.323a2.85 2.85 0 0 0-.588-1.022A2.888 2.888 0 0 0 8 1.5z"
+            ></path>
+          </svg>
         </div>
       </nav>
     </header>
     <main>
-      <div id="cont" class="container">
-        <!-- <div class="col-12">
-          <h1>Artista</h1>
-          <div class="card">
-            <div class="card-body">
-              <img
-                src="${m.data[0].artist.picture_small}"
-                class="rounded-circle"
-              />
-              <h5 class="card-title">${m.data[0].artist.name}</h5>
-              <p class="card-text">${m.data[0].artist.type}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12">
-          <h1>brani</h1>
-          <div class="row">
-            <div class="card mb-3">
-              <div class="row g-0">
-                <div class="col-4">
-                  <img
-                    src="${m.data[0].album.cover_small}"
-                    class="img-fluid rounded-start"
-                    alt="..."
-                  />
-                </div>
-                <div class="col-4 col-8 d-flex flex-row">
-                  <div class="card-body">
-                    <div d-flex>
-                      <h5 class="card-title">${m.data[0].title}</h5>
-                      <p class="card-text">${m.data[0].artist.type}</p>
-                    </div>
-                  </div>
-                  <div class="col d-flex">
-                    <button class="border border-0 bg-white">
-                      <i class="bi bi-plus-circle"></i>
-                    </button>
-                  </div>
-                  <div class="col d-flex">
-                    <p>${m.data[0].duration}</p>
-                  </div>
-                  <div class="col d-flex">
-                    <button
-                      type="button"
-                      class="border border-0 bg-white"
-                    ></button>
-                    <button
-                      type="button"
-                      class="btn btn-danger dropdown-toggle-split"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <i class="bi bi-three-dots"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><i class="bi bi-plus"></i> Aggiungi alla playlist</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><i class="bi bi-plus-circle"></i
-                        ></a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><i class="bi bi-text-wrap"></i>Something else here</a
-                        >
-                      </li>
-                      <li><hr class="dropdown-divider" /></li>
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><i class="bi bi-broadcast"></i>Separated link</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><i class="bi bi-person-gear"></i>Separated link</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </li>
-                      <li><hr class="dropdown-divider" /></li>
-                      <li>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-       -->
-      </div>
-      <div id="cont1" class="container">
-        <div id="cont1" class="row">
-          <!-- <div class="col">
-            <h1>Album</h1>
-            <div class="card" style="width: 18rem">
-              <img
-                src="./assets/imgs/main/image-1.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>-->
-        </div>
-      </div>
       <div class="container">
+        <div id="cont" class="row"></div>
+      </div>
+
+      <div id="cont3" class="container">
+        <div id="cont1" class="row"></div>
+      </div>
+
+      <div class="container">
+        <div id="cont4" class="row"></div>
+      </div>
+
+      <div id="sfoglia" class="container">
         <h2>Sfoglia tutto</h2>
         <div class="row gx-1">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
+          >
             <img
               class="img-fluid"
               src="./assets/imgs/search/image-1.jpeg"
@@ -193,7 +111,9 @@
               alt=""
             />
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
+          >
             <img
               class="img-fluid"
               src="./assets/imgs/search/image-5.jpg"
@@ -242,14 +162,18 @@
               alt=""
             />
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
+          >
             <img
               class="img-fluid"
               src="./assets/imgs/search/image-12.jpg"
               alt=""
             />
           </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
+          >
             <img
               class="img-fluid"
               src="./assets/imgs/search/image-13.jpeg"
