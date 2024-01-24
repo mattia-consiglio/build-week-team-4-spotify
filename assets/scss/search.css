@@ -1,0 +1,130 @@
+.immagine {
+  width: 300px;
+  height: 300px;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+}
+
+#search-input {
+  padding-left: 25px;
+  /* text-align: center; */
+}
+
+.input-container {
+  position: relative;
+  width: 200px;
+}
+
+input::-moz-placeholder {
+  width: 200px;
+}
+
+input::placeholder {
+  width: 200px;
+}
+
+form {
+  width: 200px;
+}
+
+.icona-spotify {
+  width: 20px;
+}
+
+.riga-card:hover .svg-play {
+  opacity: 1;
+}
+.riga-card:hover .plus-svg {
+  opacity: 1;
+}
+.riga-card:hover {
+  background-color: rgb(53, 53, 53);
+}
+
+.artist-card {
+  border: none;
+  background-color: rgb(22, 22, 22);
+}
+.artist-card:hover {
+  background-color: rgb(53, 53, 53);
+}
+
+.album-card {
+  border: none;
+  background-color: rgb(22, 22, 22);
+}
+.album-card:hover {
+  background-color: rgb(53, 53, 53);
+}
+
+.artist-img {
+  max-width: 80%;
+  border-radius: 50%;
+}
+
+.album-img {
+  max-width: 80%;
+}
+
+.plus-svg {
+  opacity: 0;
+}
+
+.name-dec {
+  text-decoration: none;
+}
+.name-dec:hover {
+  text-decoration: underline;
+}
+
+.cont-svg-playbutton {
+  position: relative;
+}
+
+.svg-play {
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (min-width: 768px) {
+  .altezza-brani {
+    overflow-y: auto;
+    max-height: 240px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .song-title {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 500px) {
+  .song-title {
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}/*# sourceMappingURL=search.css.map */

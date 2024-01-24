@@ -1,0 +1,201 @@
+@import "bs/mixins/banner";
+@include bsBanner("");
+
+// scss-docs-start import-stack
+// Configuration
+@import "bs/functions";
+
+$primary: #1fdf64;
+$body-bg-dark: #121212;
+
+@import "bs/variables";
+@import "bs/variables-dark";
+@import "bs/maps";
+@import "bs/mixins";
+@import "bs/utilities";
+
+// Layout & components
+@import "bs/root";
+@import "bs/reboot";
+@import "bs/type";
+@import "bs/images";
+@import "bs/containers";
+@import "bs/grid";
+@import "bs/tables";
+@import "bs/forms";
+@import "bs/buttons";
+@import "bs/transitions";
+@import "bs/dropdown";
+@import "bs/button-group";
+@import "bs/nav";
+@import "bs/navbar";
+@import "bs/card";
+@import "bs/accordion";
+@import "bs/breadcrumb";
+@import "bs/pagination";
+@import "bs/badge";
+@import "bs/alert";
+@import "bs/progress";
+@import "bs/list-group";
+@import "bs/close";
+@import "bs/toasts";
+@import "bs/modal";
+@import "bs/tooltip";
+@import "bs/popover";
+@import "bs/carousel";
+@import "bs/spinners";
+@import "bs/offcanvas";
+@import "bs/placeholders";
+
+// Helpers
+@import "bs/helpers";
+
+// Utilities
+@import "bs/utilities/api";
+// scss-docs-end import-stack
+
+:root {
+  --background-noise: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=");
+  --background-base: $body-bg-dark;
+}
+
+$icon-sizes: (
+  "large": 32px,
+  "medium": 16px,
+  "small": 14px,
+);
+
+@each $name, $size in $icon-sizes {
+  .icon-#{$name} {
+    display: inline-flex;
+    width: $size;
+    height: $size;
+  }
+}
+
+svg {
+  fill: currentColor;
+}
+
+.main-actions {
+  display: flex;
+  align-items: center;
+  .action {
+    margin-right: 24px;
+    cursor: pointer;
+    &.play-btn {
+      width: 56px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      margin-right: 32px;
+      svg {
+        width: 24px;
+      }
+      &:hover {
+        transform: scale(1.05);
+        color: #000;
+      }
+    }
+  }
+}
+
+.start-bg {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6) 0,
+      var(--background-base) 100%
+    ),
+    var(--background-noise);
+  height: 232px;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.table-row {
+  grid-gap: 16px;
+  display: grid;
+  padding: 0 16px;
+  grid-template-columns:
+    [index] var(--tracklist-index-column-width, 16px) [first] minmax(
+      120px,
+      var(--col1, 4fr)
+    )
+    [last] minmax(120px, var(--col2, 1fr));
+  height: 56px;
+  border-radius: 4px;
+
+  &.table-header {
+    height: 36px;
+    border-bottom: 1px solid currentColor;
+    color: #a7a7a7;
+    margin-bottom: 16px;
+  }
+
+  .table-cell {
+    display: flex;
+    align-items: center;
+    &[role="gridcell"][aria-colindex="1"] {
+      position: relative;
+      button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        // transform: translateY(-50%);
+        padding: 0 !important;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        border: 0 !important;
+      }
+    }
+  }
+
+  &:not(.table-header):hover {
+    background-color: hsla(0, 0%, 100%, 0.1);
+    button.opacity-0 {
+      opacity: 1 !important;
+    }
+    a.text-body-secondary {
+      color: $body-color-dark !important;
+    }
+
+    .table-cell {
+      &[role="gridcell"][aria-colindex="1"] {
+        button {
+          opacity: 1;
+          & + div {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  a.text-decoration-none:hover {
+    text-decoration: underline !important;
+  }
+}
+
+.placeholder {
+  min-width: 20%;
+}
+
+img.placeholder {
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor;
+    position: absolute;
+  }
+}
+
+.customBg {
+  background-color: $body-bg-dark;
+  transition: 250ms ease-out;
+}
