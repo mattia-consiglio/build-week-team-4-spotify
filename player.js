@@ -24,3 +24,12 @@ function formatTime(time) {
   const seconds = Math.floor(time % 60);
   return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
+
+const changeAudio = function (src) {
+  const sourceAudio = document.getElementById("audio-source");
+  sourceAudio.src = src;
+  audioPlayer.load();
+};
+changeAudio(
+  "https://cdns-preview-b.dzcdn.net/stream/c-bcf686b9b7b146a3ce3d160cbfa2d1b5-7.mp3"
+);
