@@ -40,4 +40,40 @@ footer img {
   border-bottom-right-radius: 1rem;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
+}
+
+/* Nasconde i controlli dell'elemento audio tranne la barra dei secondi */
+audio {
+  width: 100%; /* Imposta la larghezza desiderata */
+}
+
+audio::-webkit-media-controls {
+  display: none !important;
+}
+
+audio::-webkit-media-controls-panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  display: flex !important;
+}
+
+svg {
+  min-width: 20px;
+  fill: grey;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.play {
+  fill: black;
+  border-radius: 1rem;
+}
+
+.altre svg {
+  margin-left: -10%;
+  margin-right: -10%;
 }/*# sourceMappingURL=homepage.css.map */
