@@ -13373,27 +13373,41 @@ textarea.form-control-lg {
 }
 :root {
   --background-noise: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=");
-  --background-base: #121212;
+  --background-base: $body-bg-dark;
 }
 
 .icon-large {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   width: 32px;
   height: 32px;
 }
 
 .icon-medium {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   width: 16px;
   height: 16px;
 }
 
 .icon-small {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   width: 14px;
   height: 14px;
 }
 
+.main-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .main-actions .action {
   margin-right: 24px;
   cursor: pointer;
@@ -13437,8 +13451,77 @@ textarea.form-control-lg {
   padding: 0 16px;
   grid-template-columns: [index] var(--tracklist-index-column-width, 16px) [first] minmax(120px, var(--col1, 4fr)) [last] minmax(120px, var(--col2, 1fr));
   height: 56px;
+  border-radius: 4px;
 }
-.table-row[role=presentation] {
+.table-row.table-header {
   height: 36px;
   border-bottom: 1px solid currentColor;
+  color: #a7a7a7;
+  margin-bottom: 16px;
+}
+.table-row .table-cell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.table-row .table-cell[role=gridcell][aria-colindex="1"] {
+  position: relative;
+}
+.table-row .table-cell[role=gridcell][aria-colindex="1"] button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 0 !important;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 0 !important;
+}
+.table-row:not(.table-header):hover {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+.table-row:not(.table-header):hover button.opacity-0 {
+  opacity: 1 !important;
+}
+.table-row:not(.table-header):hover a.text-body-secondary {
+  color: #dee2e6 !important;
+}
+.table-row:not(.table-header):hover .table-cell[role=gridcell][aria-colindex="1"] button {
+  opacity: 1;
+}
+.table-row:not(.table-header):hover .table-cell[role=gridcell][aria-colindex="1"] button + div {
+  opacity: 0;
+}
+.table-row a.text-decoration-none:hover {
+  text-decoration: underline !important;
+}
+
+.placeholder {
+  min-width: 20%;
+}
+
+img.placeholder {
+  position: relative;
+}
+img.placeholder:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  position: absolute;
+}
+
+.customBg {
+  background-color: #121212;
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
 }/*# sourceMappingURL=main.css.map */
