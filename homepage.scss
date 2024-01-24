@@ -11,7 +11,7 @@ body {
 }
 
 .nascondi {
-  font-size: 10px;
+  font-size: 9px;
 }
 
 .annuncio {
@@ -71,6 +71,13 @@ svg {
 }
 
 .altre svg {
-  margin-left: -10%;
-  margin-right: -10%;
+  margin-left: -5%;
+  margin-right: -5%;
+  width: 15px;
+}
+
+.d-none svg {
+  margin-left: 0;
+  margin-right: 0;
+  width: 20px;
 }
