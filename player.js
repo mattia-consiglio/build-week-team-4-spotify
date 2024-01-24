@@ -24,12 +24,37 @@ function formatTime(time) {
   const seconds = Math.floor(time % 60);
   return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
+const sourceAudio = document.getElementById("audio-source");
 
-const changeAudio = function (src) {
-  const sourceAudio = document.getElementById("audio-source");
-  sourceAudio.src = src;
-  audioPlayer.load();
+// const changeAudio = function (src) {
+//   const sourceAudio = document.getElementById("audio-source");
+//   sourceAudio.src = src;
+//   audioPlayer.load();
+// };
+// changeAudio(
+//   "https://cdns-preview-b.dzcdn.net/stream/c-bcf686b9b7b146a3ce3d160cbfa2d1b5-7.mp3"
+// );
+
+const changeAudio = function () {
+  fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(
+          `Errore nella risposta della richiesta: ${response.statusText}`
+        );
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const randomIndex = Math.floor(Math.random() * data.length);
+      const randomUrl = data[randomIndex];
+
+      sourceAudio.src = randomUrl;
+      audioPlayer.load();
+    })
+    .catch((error) => {
+      console.error("Errore durante il recupero dei dati:", error);
+    });
 };
-changeAudio(
-  "https://cdns-preview-b.dzcdn.net/stream/c-bcf686b9b7b146a3ce3d160cbfa2d1b5-7.mp3"
-);
+
+window.onload = changeAudio;
