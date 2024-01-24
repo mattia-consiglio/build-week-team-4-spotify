@@ -7,16 +7,23 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json();
     })
     .then((artistData) => {
-      const wrapper = document.getElementById("artist-details");
-
+      // const body = document.getElementsByTagName("body");
+      const container = document.getElementById("center");
+      const imgElement = document.createElement("img");
       const artistName = document.getElementById("artist-name");
+      const listeners = document.getElementById("artist-listeners");
+      listeners.innerHTML = `${artistData.nb_fan} Ascoltatori mensili`;
+      artistName.innerText = artistData.name;
 
-      const verifiedAccount = document.getElementById("verified-account");
-
-      verifiedAccount.innerHTML = `<i class="bi bi-patch-check-fill"></i> Account verificato`;
-      wrapper.style.backgroundImage = `url(${artistData.picture_big})`;
+      // body.appendChild(container);
+      // verifiedAccount.innerHTML = `<i class="bi bi-patch-check-fill"></i> Account verificato`;
+      container.style.backgroundImage = `url('${artistData.picture_xl}')`;
+      // imgElement.alt = artistData.name;
       artistName.textContent = artistData.name;
-      // artistFans.textContent = `${artistData.nb_fan} Ascoltatori mensili`;
+      container.appendChild(imgElement);
+      // container.appendChild(artistName);
+      // container.appendChild(listeners);
+      // container.appendChild(button);
     })
     .catch((error) => {
       console.error("Error fetching artist data:", error);
