@@ -13385,6 +13385,7 @@ textarea.form-control-lg {
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 32px;
+  height: 32px;
 }
 
 .icon-medium {
@@ -13392,6 +13393,7 @@ textarea.form-control-lg {
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 16px;
+  height: 16px;
 }
 
 .icon-small {
@@ -13399,11 +13401,11 @@ textarea.form-control-lg {
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 14px;
+  height: 14px;
 }
 
 svg {
   fill: currentColor;
-  width: 100%;
 }
 
 .main-actions {
@@ -13530,13 +13532,4 @@ img.placeholder:before {
   background-color: #121212;
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
-}
-
-.player .play-pause-button {
-  width: var(--button-size);
-  height: var(--button-size);
-}
-
-.text-decoration-underline-hover:hover {
-  text-decoration: underline !important;
 }/*# sourceMappingURL=main.css.map */

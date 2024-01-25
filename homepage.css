@@ -2,6 +2,7 @@ body {
   font-family: Circular;
   background-color: #121212;
 }
+
 .avatar {
   width: 20px;
 }
@@ -60,14 +61,26 @@ audio::-webkit-media-controls-time-remaining-display {
   display: flex !important;
 }
 
-// .altre svg {
-//   margin-left: -5%;
-//   margin-right: -5%;
-//   width: 15px;
-// }
+svg {
+  min-width: 20px;
+  fill: grey;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.play {
+  fill: black;
+  border-radius: 1rem;
+}
+
+.altre svg {
+  margin-left: -5%;
+  margin-right: -5%;
+  width: 15px;
+}
 
 .d-none svg {
   margin-left: 0;
   margin-right: 0;
   width: 20px;
-}
+}/*# sourceMappingURL=homepage.css.map */
