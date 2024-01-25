@@ -13,23 +13,21 @@
 #search-input {
   padding-left: 25px;
   /* text-align: center; */
+  min-width: 100%;
 }
 
 .input-container {
   position: relative;
-  width: 200px;
+  width: 100%;
 }
 
-input::-moz-placeholder {
-  width: 200px;
+@media (min-width: 768px) {
+  .input-container {
+    width: 200px;
+  }
 }
-
-input::placeholder {
-  width: 200px;
-}
-
 form {
-  width: 200px;
+  width: 100%;
 }
 
 .icona-spotify {
