@@ -80,6 +80,9 @@ form {
   margin-right: 15%;
   margin-top: 5%;
 }
+#playbut:hover {
+  transform: scale(1.1);
+}
 
 .album-img {
   max-width: 80%;
@@ -105,11 +108,14 @@ form {
   margin-right: 15%;
   margin-bottom: 5%;
 }
+#playbut1:hover {
+  transform: scale(1.1);
+}
 
 .svg-art {
   fill: #121212;
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
 }
 
 .album-card {
@@ -197,16 +203,8 @@ body {
   background-color: #121212;
 }
 
-.avatar {
-  width: 20px;
-}
-
 .copertina {
   width: 200px;
-}
-
-.nascondi {
-  font-size: 9px;
 }
 
 .annuncio {
@@ -257,7 +255,6 @@ audio::-webkit-media-controls-time-remaining-display {
 
 svg {
   min-width: 20px;
-  fill: grey;
   margin-left: 15%;
   margin-right: 15%;
 }

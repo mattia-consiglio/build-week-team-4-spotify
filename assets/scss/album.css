@@ -25,4 +25,57 @@
 #artistImg {
   max-width: 25px;
   border-radius: 50%;
+}
+
+.copertina {
+  width: 200px;
+}
+
+.annuncio {
+  background: linear-gradient(to bottom, #212121, #000000);
+}
+
+.buonasera img {
+  width: 50px;
+}
+
+.early {
+  background-color: #2d2d2d;
+}
+
+.card {
+  background-color: #171717;
+}
+
+footer img {
+  width: 40px;
+}
+
+.roundel {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.play {
+  fill: black;
+  border-radius: 1rem;
+}
+
+.altre svg {
+  margin-left: -5%;
+  margin-right: -5%;
+  width: 15px;
+}
+
+.d-none svg {
+  margin-left: 0;
+  margin-right: 0;
+  width: 20px;
+}
+
+.bi-three-dots {
+  fill: white;
+  width: 20px;
 }/*# sourceMappingURL=album.css.map */
