@@ -13400,6 +13400,10 @@ textarea.form-control-lg {
   height: 14px;
 }
 
+svg {
+  fill: currentColor;
+}
+
 .main-actions {
   display: -webkit-box;
   display: -ms-flexbox;
