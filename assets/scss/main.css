@@ -13376,10 +13376,6 @@ textarea.form-control-lg {
   --background-base: $body-bg-dark;
 }
 
-.main-row {
-  height: calc(100vh - 72px);
-}
-
 .icon-large {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;

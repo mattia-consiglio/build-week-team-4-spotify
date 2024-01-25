@@ -64,10 +64,6 @@ $icon-sizes: (
   "medium": 16px,
   "small": 14px,
 );
-$player-height: 72px;
-.main-row {
-  height: calc(100vh - $player-height);
-}
 
 @each $name, $size in $icon-sizes {
   .icon-#{$name} {

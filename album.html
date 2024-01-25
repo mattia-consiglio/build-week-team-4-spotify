@@ -1,643 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Album</title>
-    <link rel="stylesheet" href="./assets/scss/main.css" />
-    <link rel="stylesheet" href="./assets/scss/album.min.css" />
-    <link rel="stylesheet" href="./assets/scss/search.css" />
-  </head>
 
-  <body class="p-1" data-bs-theme="dark">
-    <div class="container-fluid d-flex flex-column p-0">
-      <div class="d-flex main-row">
-        <div class="bg-black d-none d-lg-block colonna1">
-          <div class="mb-4 mt-4 prime-icone">
-            <div class="mb-2 d-flex align-items-center"></div>
-            <div class="mb-2 d-flex align-items-center">
-              <a href="./homepage.html" class="text-light text-decoration-none">
-                <svg
-                  data-encore-id="icon"
-                  role="img"
-                  aria-hidden="true"
-                  class="Svg-sc-ytk21e-0 bneLcE home-icon me-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z"
-                  ></path>
-                </svg>
-                Home</a
-              >
-            </div>
-            <div class="mb-2 d-flex align-items-center">
-              <a href="./search.html" class="text-light text-decoration-none">
-                <svg
-                  data-encore-id="icon"
-                  role="img"
-                  aria-hidden="true"
-                  class="Svg-sc-ytk21e-0 bneLcE search-icon me-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"
-                  ></path>
-                </svg>
-                Cerca</a
-              >
-            </div>
-            <div class="mb-2 d-flex align-items-center">
-              <a href="#" class="text-white text-decoration-none">
-                <svg
-                  data-encore-id="icon"
-                  role="img"
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  class="Svg-sc-ytk21e-0 bneLcE me-2"
-                >
-                  <path
-                    d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z"
-                  ></path>
-                </svg>
-                La tua libreria</a
-              >
-            </div>
-          </div>
-          <div class="icone2">
-            <div class="mb-2">
-              <a href="#" class="text-white text-decoration-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-plus-square-fill me-2"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"
-                  />
-                </svg>
-                Crea playlist</a
-              >
-            </div>
-            <div class="mb-2">
-              <a href="#" class="text-white text-decoration-none">
-                <img
-                  aria-hidden="true"
-                  draggable="false"
-                  loading="eager"
-                  src="https://misc.scdn.co/liked-songs/liked-songs-64.png"
-                  data-testid="entity-image"
-                  alt="Brani che ti piacciono"
-                  class="me-2 mMx2LUixlnN_Fu45JpFB iJp40IxKg6emF6KYJ414 Yn2Ei5QZn19gria6LjZj brani-like"
-                  srcset="
-                    https://misc.scdn.co/liked-songs/liked-songs-64.png   32w,
-                    https://misc.scdn.co/liked-songs/liked-songs-64.png   64w,
-                    https://misc.scdn.co/liked-songs/liked-songs-300.png 150w,
-                    https://misc.scdn.co/liked-songs/liked-songs-300.png 300w,
-                    https://misc.scdn.co/liked-songs/liked-songs-640.png 320w,
-                    https://misc.scdn.co/liked-songs/liked-songs-640.png 640w
-                  "
-                />
-                Brani che ti piacciono</a
-              >
-            </div>
-            <div class="mb-2 pb-3 border-bottom">
-              <a href="#" class="text-white text-decoration-none d-flex">
-                <button
-                  class="d-flex align-items-center justify-content-center"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-bookmark-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2"
-                    />
-                  </svg>
-                </button>
-                I tuoi episodi
-              </a>
-            </div>
-          </div>
-          <div id="to-fill"></div>
-          <div class="playlist overflow-y-auto">
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-          </div>
-        </div>
-        <div class="overflow-y-auto w-100 h-100 position-relative">
-          <div class="container-fluid hero customBg" id="hero">
-            <div class="container py-4 position-relative z-2">
-              <div class="row align-items-end">
-                <div
-                  class="col-12 col-md-3 text-center text-md-start placeholder-wave"
-                >
-                  <img
-                    src=""
-                    alt=""
-                    crossorigin="anonymous"
-                    class="img-thumbnail rounded album-cover placeholder"
-                    id="albumCover"
-                    width="1000"
-                    height="1000"
-                  />
-                </div>
-                <div class="col-12 col-md-9">
-                  <p class="mb-1">Album</p>
-                  <div class="placeholder-wave">
-                    <h1 class="fs-2 fw-bold mb-3 placeholder" id="albumTitle">
-                      Titolo album
-                    </h1>
-                  </div>
-                  <div class="placeholder-wave">
-                    <p class="placeholder">
-                      <img src="" alt="" id="artistImg" />
-                      <a
-                        id="albumArtist"
-                        href=""
-                        class="text-decoration-none fw-bold text-body"
-                      ></a>
-                      <b>&centerdot;</b>
-                      <span id="releaseDate"></span>
-                      <b>&centerdot;</b> <span id="albumTracksNumber"></span>,
-                      <span id="albumDuration"></span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="start-bg customBg"></div>
-          <div class="contaner-fluid">
-            <div class="container">
-              <!-- Bottoni azione : Play, shuffle, like -->
-              <div class="row py-4">
-                <div class="col main-actions">
-                  <button
-                    class="btn btn-primary rounded-circle play-btn action"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
-                      ></path>
-                    </svg>
-                  </button>
-                  <span class="icon-large action">
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      viewBox="0 0 16 16"
-                      class="Svg-sc-ytk21e-0 dYnaPI"
-                    >
-                      <path
-                        d="M13.151.922a.75.75 0 1 0-1.06 1.06L13.109 3H11.16a3.75 3.75 0 0 0-2.873 1.34l-6.173 7.356A2.25 2.25 0 0 1 .39 12.5H0V14h.391a3.75 3.75 0 0 0 2.873-1.34l6.173-7.356a2.25 2.25 0 0 1 1.724-.804h1.947l-1.017 1.018a.75.75 0 0 0 1.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 0 0 .39 3.5z"
-                      ></path>
-                      <path
-                        d="m7.5 10.723.98-1.167.957 1.14a2.25 2.25 0 0 0 1.724.804h1.947l-1.017-1.018a.75.75 0 1 1 1.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 1 1-1.06-1.06L13.109 13H11.16a3.75 3.75 0 0 1-2.873-1.34l-.787-.938z"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span class="icon-large action">
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      viewBox="0 0 24 24"
-                      class=""
-                    >
-                      <path
-                        d="M5.21 1.57a6.757 6.757 0 0 1 6.708 1.545.124.124 0 0 0 .165 0 6.741 6.741 0 0 1 5.715-1.78l.004.001a6.802 6.802 0 0 1 5.571 5.376v.003a6.689 6.689 0 0 1-1.49 5.655l-7.954 9.48a2.518 2.518 0 0 1-3.857 0L2.12 12.37A6.683 6.683 0 0 1 .627 6.714 6.757 6.757 0 0 1 5.21 1.57zm3.12 1.803a4.757 4.757 0 0 0-5.74 3.725l-.001.002a4.684 4.684 0 0 0 1.049 3.969l.009.01 7.958 9.485a.518.518 0 0 0 .79 0l7.968-9.495a4.688 4.688 0 0 0 1.049-3.965 4.803 4.803 0 0 0-3.931-3.794 4.74 4.74 0 0 0-4.023 1.256l-.008.008a2.123 2.123 0 0 1-2.9 0l-.007-.007a4.757 4.757 0 0 0-2.214-1.194z"
-                      ></path>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div role="grid">
-                    <div class="table-row table-header" role="presentation">
-                      <div class="table-cell" role="columnheader">#</div>
-                      <div class="table-cell" role="columnheader">Titolo</div>
-                      <div
-                        class="table-cell d-flex justify-content-end"
-                        role="columnheader"
-                      >
-                        <span class="icon-medium"
-                          ><svg
-                            data-encore-id="icon"
-                            role="img"
-                            aria-hidden="true"
-                            viewBox="0 0 16 16"
-                            class="Svg-sc-ytk21e-0 dYnaPI"
-                          >
-                            <path
-                              d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                            ></path>
-                            <path
-                              d="M8 3.25a.75.75 0 0 1 .75.75v3.25H11a.75.75 0 0 1 0 1.5H7.25V4A.75.75 0 0 1 8 3.25z"
-                            ></path></svg
-                        ></span>
-                      </div>
-                    </div>
-                    <div role="presentation" id="tracksContainer"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="d-none d-lg-block bg-black colonna3">
-          <div
-            class="d-flex mb-4 me-2 mt-4 ms-2 align-items-center justify-content-between"
-          >
-            <div>
-              <p class="fw-bold fs-4">Attività amici</p>
-            </div>
-            <div>
-              <p>
-                <svg
-                  data-encore-id="icon"
-                  role="img"
-                  aria-hidden="true"
-                  viewBox="0 0 16 16"
-                  class="Svg-sc-ytk21e-0 ewCuAY me-2"
-                >
-                  <path
-                    d="M4.765 1.423c-.42.459-.713.992-.903 1.554-.144.421-.264 1.173-.22 1.894.077 1.321.638 2.408 1.399 3.316v.002l.083.098c.611.293 1.16.696 1.621 1.183a2.244 2.244 0 0 0-.426-2.092l-.127-.153-.002-.001c-.612-.73-.997-1.52-1.051-2.442-.032-.54.066-1.097.143-1.323a2.85 2.85 0 0 1 .589-1.022 2.888 2.888 0 0 1 4.258 0c.261.284.456.628.59 1.022.076.226.175.783.143 1.323-.055.921-.44 1.712-1.052 2.442l-.002.001-.127.153a2.25 2.25 0 0 0 .603 3.39l2.209 1.275a3.248 3.248 0 0 1 1.605 2.457h-5.99a5.466 5.466 0 0 1-.594 1.5h8.259l-.184-1.665a4.75 4.75 0 0 0-2.346-3.591l-2.209-1.275a.75.75 0 0 1-.201-1.13l.126-.152h.001c.76-.909 1.32-1.995 1.399-3.316.043-.721-.077-1.473-.22-1.894a4.46 4.46 0 0 0-.644-1.24v-.002h-.002a4.388 4.388 0 0 0-6.728-.312zM2 12.5v-2h1.5v2h2V14h-2v2H2v-2H0v-1.5h2z"
-                  ></path>
-                </svg>
-                <svg
-                  data-encore-id="icon"
-                  role="img"
-                  aria-hidden="true"
-                  viewBox="0 0 16 16"
-                  class="Svg-sc-ytk21e-0 dYnaPI"
-                >
-                  <path
-                    d="M2.47 2.47a.75.75 0 0 1 1.06 0L8 6.94l4.47-4.47a.75.75 0 1 1 1.06 1.06L9.06 8l4.47 4.47a.75.75 0 1 1-1.06 1.06L8 9.06l-4.47 4.47a.75.75 0 0 1-1.06-1.06L6.94 8 2.47 3.53a.75.75 0 0 1 0-1.06Z"
-                  ></path>
-                </svg>
-              </p>
-            </div>
-          </div>
-          <div class="row ms-1">
-            <div class="col-2">
-              <img
-                src="./assets/imgs/main/image-16.jpg"
-                class="avatar rounded-circle"
-                alt="avatar"
-              />
-            </div>
-            <div class="col-7 nascondi">
-              <p>
-                Charlie Hookham<br />In camera • Yumi Zouma <br /><i
-                  class="bi bi-disc"
-                ></i>
-                EP III
-              </p>
-            </div>
-            <div class="col-3 nascondi">4 ore</div>
-          </div>
-          <div class="row ms-1">
-            <div class="col-2">
-              <img
-                src="./assets/imgs/main/image-14.jpg"
-                class="avatar rounded-circle"
-                alt="avatar"
-              />
-            </div>
-            <div class="col-7 nascondi">
-              <p>
-                lightdark02<br />Aimed to Kill • Jade LeMac <br /><i
-                  class="bi bi-disc"
-                ></i>
-                Aimed to Kill
-              </p>
-            </div>
-            <div class="col-3 nascondi">8 ore</div>
-          </div>
-          <div class="row ms-1">
-            <div class="col-2">
-              <img
-                src="./assets/imgs/main/image-18.jpg"
-                class="avatar rounded-circle"
-                alt="avatar"
-              />
-            </div>
-            <div class="col-7 nascondi">
-              <p>
-                Valeria Traverso<br />New Kings• Sleeping Wolf<br /><i
-                  class="bi bi-music-note-beamed"
-                ></i>
-                Twint Badass mood
-              </p>
-            </div>
-            <div class="col-3 nascondi">3 giorni</div>
-          </div>
-        </div>
-      </div>
-    </div>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Album</title>
+	<link rel="stylesheet" href="./assets/scss/main.min.css">
+	<link rel="stylesheet" href="./assets/scss/album.min.css">
+</head>
 
-    <footer>
-      <div class="row riproduci">
-        <div class="col-md-4 d-flex">
-          <div>
-            <img src="./assets/imgs/search/image-13.jpeg" alt="music" />
-          </div>
-          <div class="mx-2">
-            <p>Fat funny friend <br />Maddie Zahm</p>
-          </div>
-          <div class="m-3"><i class="bi bi-heart"></i></div>
-        </div>
-        <div class="col-md-5 mt-5 position-relative">
-          <div class="audio-icons position-absolute d-flex">
-            <svg
-              data-encore-id="icon"
-              role="img"
-              aria-hidden="true"
-              viewBox="0 0 16 16"
-              class="Svg-sc-ytk21e-0 dYnaPI svg"
-            >
-              <path
-                d="M13.151.922a.75.75 0 1 0-1.06 1.06L13.109 3H11.16a3.75 3.75 0 0 0-2.873 1.34l-6.173 7.356A2.25 2.25 0 0 1 .39 12.5H0V14h.391a3.75 3.75 0 0 0 2.873-1.34l6.173-7.356a2.25 2.25 0 0 1 1.724-.804h1.947l-1.017 1.018a.75.75 0 0 0 1.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 0 0 .39 3.5z"
-              ></path>
-              <path
-                d="m7.5 10.723.98-1.167.957 1.14a2.25 2.25 0 0 0 1.724.804h1.947l-1.017-1.018a.75.75 0 1 1 1.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 1 1-1.06-1.06L13.109 13H11.16a3.75 3.75 0 0 1-2.873-1.34l-.787-.938z"
-              ></path>
-            </svg>
-            <svg
-              data-encore-id="icon"
-              role="img"
-              aria-hidden="true"
-              viewBox="0 0 16 16"
-              class="Svg-sc-ytk21e-0 dYnaPI"
-            >
-              <path
-                d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"
-              ></path>
-            </svg>
-            <button
-              class="btn btn-light play"
-              aria-label="Play"
-              data-testid="control-button-playpause"
-              style="--button-size: 32px"
-            >
-              <svg
-                data-encore-id="icon"
-                role="img"
-                aria-hidden="true"
-                viewBox="0 0 16 16"
-                class="Svg-sc-ytk21e-0 dYnaPI play"
-              >
-                <path
-                  d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"
-                ></path>
-              </svg>
-            </button>
-            <svg
-              data-encore-id="icon"
-              role="img"
-              aria-hidden="true"
-              viewBox="0 0 16 16"
-              class="Svg-sc-ytk21e-0 dYnaPI"
-            >
-              <path
-                d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"
-              ></path>
-            </svg>
-            <svg
-              data-encore-id="icon"
-              role="img"
-              aria-hidden="true"
-              viewBox="0 0 16 16"
-              class="Svg-sc-ytk21e-0 dYnaPI"
-            >
-              <path
-                d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z"
-              ></path>
-            </svg>
-          </div>
-          <audio id="audio-player" controls>
-            <!-- inserire qui l'id del brano corrente -->
-            <source id="audio-source" src="" type="audio/mp3" />
-          </audio>
-          <p id="custom-audio-controls" class="mt-3">
-            <span id="current-time">0:00</span>
-            <input type="range" id="seek-bar" value="0" />
-            <span id="duration">0:00</span>
-          </p>
-        </div>
-        <div class="col-md-3 mt-5 d-flex justify-content-end altre">
-          <button
-            class="Button-sc-1dqy6lx-0 emaScS KAZD28usA1vPz5GVpm63 RK45o6dbvO1mb0wQtSwq EHxL6K_6WWDlTCZP6x5w btn btn-black"
-            data-testid="control-button-npv"
-            data-active="true"
-            aria-pressed="true"
-            aria-label="Vista Stai ascoltando"
-            data-encore-id="buttonTertiary"
-          >
-            <span
-              aria-hidden="true"
-              class="IconWrapper__Wrapper-sc-16usrgb-0 hYdsxw"
-              ><svg
-                data-encore-id="icon"
-                role="img"
-                aria-hidden="true"
-                viewBox="0 0 16 16"
-                class="Svg-sc-ytk21e-0 dYnaPI"
-              >
-                <path d="M11.196 8 6 5v6l5.196-3z"></path>
-                <path
-                  d="M15.002 1.75A1.75 1.75 0 0 0 13.252 0h-10.5a1.75 1.75 0 0 0-1.75 1.75v12.5c0 .966.783 1.75 1.75 1.75h10.5a1.75 1.75 0 0 0 1.75-1.75V1.75zm-1.75-.25a.25.25 0 0 1 .25.25v12.5a.25.25 0 0 1-.25.25h-10.5a.25.25 0 0 1-.25-.25V1.75a.25.25 0 0 1 .25-.25h10.5z"
-                ></path></svg
-            ></span>
-          </button>
-          <button
-            class="Button-sc-1dqy6lx-0 emaScS KAZD28usA1vPz5GVpm63 btn btn-black ZMXGDTbwxKJhbmEDZlYy Xmv2oAnTB85QE4sqbK00"
-            data-testid="lyrics-button"
-            data-active="false"
-            aria-pressed="false"
-            aria-label="Lyrics"
-            data-encore-id="buttonTertiary"
-          >
-            <span
-              aria-hidden="true"
-              class="IconWrapper__Wrapper-sc-16usrgb-0 hYdsxw"
-              ><svg
-                data-encore-id="icon"
-                role="img"
-                aria-hidden="true"
-                viewBox="0 0 16 16"
-                class="Svg-sc-ytk21e-0 dYnaPI"
-              >
-                <path
-                  d="M13.426 2.574a2.831 2.831 0 0 0-4.797 1.55l3.247 3.247a2.831 2.831 0 0 0 1.55-4.797zM10.5 8.118l-2.619-2.62A63303.13 63303.13 0 0 0 4.74 9.075L2.065 12.12a1.287 1.287 0 0 0 1.816 1.816l3.06-2.688 3.56-3.129zM7.12 4.094a4.331 4.331 0 1 1 4.786 4.786l-3.974 3.493-3.06 2.689a2.787 2.787 0 0 1-3.933-3.933l2.676-3.045 3.505-3.99z"
-                ></path></svg
-            ></span>
-          </button>
-          <button
-            class="Button-sc-1dqy6lx-0 emaScS KAZD28usA1vPz5GVpm63 btn btn-black"
-            data-testid="control-button-queue"
-            data-active="false"
-            aria-pressed="false"
-            aria-label="Coda"
-            data-encore-id="buttonTertiary"
-          >
-            <span
-              aria-hidden="true"
-              class="IconWrapper__Wrapper-sc-16usrgb-0 hYdsxw"
-              ><svg
-                data-encore-id="icon"
-                role="img"
-                aria-hidden="true"
-                viewBox="0 0 16 16"
-                class="Svg-sc-ytk21e-0 dYnaPI"
-              >
-                <path
-                  d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 0 1 3.5 1h9a2.5 2.5 0 0 1 0 5h-9A2.5 2.5 0 0 1 1 3.5zm2.5-1a1 1 0 0 0 0 2h9a1 1 0 1 0 0-2h-9z"
-                ></path></svg
-            ></span>
-          </button>
-          <button
-            class="control-button INitzTSjokOMEJOc6P2H btn btn-black"
-            aria-label="Connetti a un dispositivo"
-            aria-expanded="false"
-            id="device-picker-icon-button"
-          >
-            <svg
-              data-encore-id="icon"
-              role="presentation"
-              aria-hidden="true"
-              class="Svg-sc-ytk21e-0 dYnaPI"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"
-              ></path>
-              <path
-                d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
-              ></path>
-            </svg>
-          </button>
-          <div
-            class="eEZSnYlv7__34b2yulfm ExuDUBJ7bk8vT6INnm9F"
-            data-testid="volume-bar"
-            dir="ltr"
-            style="--button-size: 32px; --slider-width: 100%"
-          >
-            <button
-              class="FZhaXNtbN3Crwrgd0TA7 control-button btn btn-black"
-              aria-label="Disattiva audio"
-              aria-describedby="volume-icon"
-              data-testid="volume-bar-toggle-mute-button"
-            >
-              <svg
-                data-encore-id="icon"
-                role="presentation"
-                aria-label="Volume alto"
-                aria-hidden="true"
-                id="volume-icon"
-                viewBox="0 0 16 16"
-                class="Svg-sc-ytk21e-0 kcUFwU"
-              >
-                <path
-                  d="M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88z"
-                ></path>
-                <path
-                  d="M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127v1.55z"
-                ></path>
-              </svg>
-            </button>
-            <div class="x1jWng8HDweDS840aiIA d-flex">
-              <div class="p1ULRzPc4bD8eQ4T_wyp DFtdzavKSbEhwKYkPTa6 d-flex">
-                <label class="hidden-visually"
-                  ><input type="range" min="0" max="1" step="0.1" value="1"
-                /></label>
-                <div
-                  class="TywOcKZEqNynWecCiATc d-flex"
-                  data-testid="progress-bar"
-                  style="--progress-bar-transform: 100%"
-                >
-                  <div
-                    class="NoOAOv6U6vtqj_ybS1Cd d-flex"
-                    data-testid="progress-bar-background"
-                  >
-                    <div class="w699O0LgQRghXyl3bs9u d-flex">
-                      <div class="epWhU7hHGktzlO_dop6z d-flex"></div>
-                    </div>
-                    <div class="Vis45PPawTyED7Lt2_LI" d-flex></div>
-                  </div>
-                  <div style="width: 100% d-flex"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button
-          class="Button-sc-1dqy6lx-0 emaScS KAZD28usA1vPz5GVpm63 btn btn-black d-flex"
-          data-testid="pip-toggle-button"
-          data-active="false"
-          aria-pressed="false"
-          aria-label="Apri mini player"
-          data-encore-id="buttonTertiary"
-        >
-          <span
-            aria-hidden="true"
-            class="IconWrapper__Wrapper-sc-16usrgb-0 hYdsxw"
-            ><svg
-              data-encore-id="icon"
-              role="img"
-              aria-hidden="true"
-              viewBox="0 0 16 16"
-              class="Svg-sc-ytk21e-0 dYnaPI"
-            >
-              <path
-                d="M16 2.45c0-.8-.65-1.45-1.45-1.45H1.45C.65 1 0 1.65 0 2.45v11.1C0 14.35.65 15 1.45 15h5.557v-1.5H1.5v-11h13V7H16V2.45z"
-              ></path>
-              <path
-                d="M15.25 9.007a.75.75 0 0 1 .75.75v4.493a.75.75 0 0 1-.75.75H9.325a.75.75 0 0 1-.75-.75V9.757a.75.75 0 0 1 .75-.75h5.925z"
-              ></path></svg
-          ></span>
-        </button>
-      </div>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script/tools.js"></script>
-    <script src="script/album.js"></script>
-  </body>
+<body data-bs-theme="dark">
+	<div class="container-fluid hero customBg" id="hero">
+		<div class="container py-4 position-relative z-2">
+			<div class="row align-items-end">
+				<div class="col-12 col-md-3 text-center text-md-start placeholder-wave">
+					<img src="" alt="" crossorigin="anonymous" class="img-thumbnail rounded album-cover placeholder"
+						id="albumCover" width="1000" height="1000">
+				</div>
+				<div class="col-12 col-md-9">
+					<p class="mb-1">Album</p>
+					<div class="placeholder-wave">
+						<h1 class="fs-2 fw-bold mb-3 placeholder" id="albumTitle">Titolo album</h1>
+					</div>
+					<div class="placeholder-wave">
+						<p class="placeholder"><img src="" alt="" id="artistImg">
+							<a id="albumArtist" href="" class="text-decoration-none fw-bold text-body"></a>
+							<b>&centerdot;</b>
+							<span id="releaseDate"></span>
+							<b>&centerdot;</b> <span id="albumTracksNumber"></span>, <span id="albumDuration"></span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="start-bg customBg"></div>
+	<div class="contaner-fluid">
+		<div class="container">
+			<!-- Bottoni azione : Play, shuffle, like -->
+			<div class="row py-4">
+				<div class="col main-actions">
+					<button class="btn btn-primary rounded-circle play-btn action">
+						<i class="si si-play"></i>
+					</button>
+					<span class="icon-large action">
+<i class="si si-shuffle"></i>
+					</span>
+					<span class="icon-large action">
+						<i class="si si-plus-circle"></i>
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col ">
+					<div role="grid">
+						<div class="table-row table-header" role="presentation">
+							<div class="table-cell" role="columnheader">#</div>
+							<div class="table-cell" role="columnheader">Titolo</div>
+							<div class="table-cell d-flex justify-content-end" role="columnheader"><span class="icon-medium"><i class="si si-clock"></i></span></div>
+						</div>
+						<div role="presentation" id="tracksContainer">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+		<script src="script/icons.js"></script>
+		<script src="script/tools.js"></script>
+		<script src="script/album.js"></script>
+</body>
+
 </html>
