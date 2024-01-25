@@ -1,23 +1,15 @@
 body {
   font-family: "Circular", sans-serif;
   background: rgb(18, 18, 18);
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(36%, rgb(18, 18, 18)), to(rgb(45, 45, 43))) no-repeat;
   background: linear-gradient(0deg, rgb(18, 18, 18) 36%, rgb(45, 45, 43) 100%) no-repeat;
   margin: 0;
   height: 100%;
 }
 
 #center {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   min-height: 40vh;
   background-size: cover;
 }
