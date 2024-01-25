@@ -153,3 +153,27 @@ $(document).ready(function () {
     return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   }
 });
+
+
+
+
+
+
+const updateRangeInput = input => {
+	const max = input.max
+	const min = input.min
+	const value = input.value
+	const step = input.step
+	let perc = 0
+	if (value > min) {
+		perc = (value - min) / (max - min)
+	}
+	input.style.setProperty('--value', perc * 100 + '%')
+}
+
+document.querySelectorAll("input[type=range]").forEach((input) => {
+  updateRangeInput(input)
+  input.addEventListener('input', ()=> {
+    updateRangeInput(input)
+  } )
+})
