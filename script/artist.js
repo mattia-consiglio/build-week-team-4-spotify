@@ -1,5 +1,11 @@
+const addressBarContent = new URLSearchParams(location.search);
+console.log(addressBarContent);
+
+const artistId = addressBarContent.get("artistId");
+console.log(artistId);
+
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/1184/")
+  fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -30,7 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   fetch(
-    "https://striveschool-api.herokuapp.com/api/deezer/artist/1184/top?limit=10"
+    "https://striveschool-api.herokuapp.com/api/deezer/artist/" +
+      artistId +
+      "/top?limit=10"
   ).then((response) => {
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
