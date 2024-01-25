@@ -1,14 +1,33 @@
-const createCardArt = 0;
-let timeLastChange = new Date();
-const searchDelay = 500;
+const durationToString = (duration, format = 1) => {
+	const hours = Math.floor(duration / 3600)
+	const minutes = Math.floor((duration - hours * 3600) / 60)
+	const seconds = Math.floor(duration - hours * 3600 - minutes * 60)
+	let hoursString
+	let minutesString
+	if (format === 1) {
+		hoursString = hours > 1 ? hours + ' ore ' : hours === 1 ? hours + ' ora ' : ''
+		minutesString = minutes > 1 ? minutes + ' minuti' : minutes === 1 ? minutes + ' minuto' : ''
+		return `${hoursString}${minutesString}`
+	}
+	if (format === 2) {
+		hoursString = hours ? hours + ':' : ''
+		minutesString = minutes + ':'
+
+		return `${hoursString}${minutesString}${seconds.toString().padStart(2, '0')}`
+	}
+}
+
+const createCardArt = 0
+let timeLastChange = new Date()
+const searchDelay = 500
 
 const createCard = function (m) {
-  console.log(m);
-  const container = document.getElementById("cont");
-  container.innerHTML = "";
-  const createCardArt = document.createElement("div");
-  createCardArt.classList.add("col-12", "col-md-5", "col-lg-6");
-  createCardArt.innerHTML = `
+	console.log(m)
+	const container = document.getElementById('cont')
+	container.innerHTML = ''
+	const createCardArt = document.createElement('div')
+	createCardArt.classList.add('col-12', 'col-md-5', 'col-lg-6')
+	createCardArt.innerHTML = `
   
   <h1 class="mb-2">Artista</h1>
   <div class="card artist-card mb-3 h-75">
@@ -23,18 +42,18 @@ const createCard = function (m) {
   </div></a>
   </div>
   
-  `;
-  container.appendChild(createCardArt);
+  `
+	container.appendChild(createCardArt)
 
-  const createCardSong = document.createElement("div");
-  createCardSong.classList.add("col-md-7", "col-lg-6");
-  createCardSong.innerHTML = `<h1>Brani </h1>`;
-  const cardContainer = document.createElement("div");
-  cardContainer.classList.add("altezza-brani");
-  m.data.forEach((element) => {
-    const card = document.createElement("div");
-    card.classList.add("card", "cardsong", "border", "border-0");
-    card.innerHTML = `
+	const createCardSong = document.createElement('div')
+	createCardSong.classList.add('col-md-7', 'col-lg-6')
+	createCardSong.innerHTML = `<h1>Brani </h1>`
+	const cardContainer = document.createElement('div')
+	cardContainer.classList.add('altezza-brani')
+	m.data.forEach(element => {
+		const card = document.createElement('div')
+		card.classList.add('card', 'cardsong', 'border', 'border-0')
+		card.innerHTML = `
                 <div class="row riga-card g-0">
                 <div class="col-2  d-flex align-items-center ps-3">
                 <div class="cont-svg-playbutton d-flex">
@@ -50,7 +69,9 @@ const createCard = function (m) {
                     <div class="card-body w-100">
                       <div class="d-flex flex-column" >
                         <h6 class="card-title song-title">${element.title}</h6>
-                        <a class="text-white-50 name-dec " href="./album.html"><p class="card-text">
+                        <a class="text-white-50 name-dec " href="./artist.html?artistId=${
+													element.artist.id
+												}"><p class="card-text">
                         ${element.artist.name}
                         </p></a>
                         </div>
@@ -58,7 +79,7 @@ const createCard = function (m) {
                     </div>
                     <div class="col-5 d-flex justify-content-evenly align-items-center flex-wrap">
                       <button class='btn plus-svg border border-0 btn-bg-transparent ' ><i class="bi bi-plus-circle"></i></button>
-                      <p class="m-0">${element.duration}</p>
+                      <p class="m-0">${durationToString(element.duration, 2)}</p>
                       <button type="button" class="btn btn-white  dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots"></i>
 
                       </button>
@@ -80,45 +101,38 @@ const createCard = function (m) {
                   
               
               
-`;
+`
 
-    cardContainer.appendChild(card);
-  });
-  createCardSong.appendChild(cardContainer);
-  container.appendChild(createCardSong);
-};
+		cardContainer.appendChild(card)
+	})
+	createCardSong.appendChild(cardContainer)
+	container.appendChild(createCardSong)
+}
 
 const createArtistCard = function (ArtistCard) {
-  let artisti = ArtistCard.data.map((canzone) => ({
-    nome: canzone.artist.name,
-    immagine: canzone.artist.picture_medium,
-    tipo: canzone.artist.type,
-    idArtist: canzone.artist.id,
-  }));
+	let artisti = ArtistCard.data.map(canzone => ({
+		nome: canzone.artist.name,
+		immagine: canzone.artist.picture_medium,
+		tipo: canzone.artist.type,
+		idArtist: canzone.artist.id,
+	}))
 
-  let unici = artisti.reduce((acc, artista) => {
-    if (!acc.find((a) => a.nome === artista.nome)) {
-      acc.push(artista);
-    }
-    return acc;
-  }, []);
+	let unici = artisti.reduce((acc, artista) => {
+		if (!acc.find(a => a.nome === artista.nome)) {
+			acc.push(artista)
+		}
+		return acc
+	}, [])
 
-  console.log(artisti);
+	console.log(artisti)
 
-  const rigaArtist = document.getElementById("cont1");
-  rigaArtist.innerHTML = "";
-  rigaArtist.innerHTML = `<h1>Artisti</h1>`;
-  unici.forEach((art) => {
-    const artistCard = document.createElement("div");
-    artistCard.classList.add(
-      "col-6",
-      "col-sm-6",
-      "col-md-4",
-      "col-lg-3",
-      "col-xl-2",
-      "gy-3"
-    );
-    artistCard.innerHTML = `
+	const rigaArtist = document.getElementById('cont1')
+	rigaArtist.innerHTML = ''
+	rigaArtist.innerHTML = `<h1>Artisti</h1>`
+	unici.forEach(art => {
+		const artistCard = document.createElement('div')
+		artistCard.classList.add('col-6', 'col-sm-6', 'col-md-4', 'col-lg-3', 'col-xl-2', 'gy-3')
+		artistCard.innerHTML = `
         
                 
                 <div class="card artist-card rounded-3" style="height:100%" >
@@ -138,43 +152,36 @@ const createArtistCard = function (ArtistCard) {
                   </div></a>
                 </div>
               
-        `;
+        `
 
-    rigaArtist.appendChild(artistCard);
-  });
-};
+		rigaArtist.appendChild(artistCard)
+	})
+}
 const createAlbumCard = function (Albumcard) {
-  let album = Albumcard.data.map((album) => ({
-    nome: album.album.title,
-    immagine: album.album.cover_medium,
-    tipo: album.album.type,
-    artista: album.artist.name,
-    idAlbum: album.album.id,
-  }));
+	let album = Albumcard.data.map(album => ({
+		nome: album.album.title,
+		immagine: album.album.cover_medium,
+		tipo: album.album.type,
+		artista: album.artist.name,
+		idAlbum: album.album.id,
+	}))
 
-  let unici = album.reduce((acc, artista) => {
-    if (!acc.find((a) => a.nome === artista.nome)) {
-      acc.push(artista);
-    }
-    return acc;
-  }, []);
+	let unici = album.reduce((acc, artista) => {
+		if (!acc.find(a => a.nome === artista.nome)) {
+			acc.push(artista)
+		}
+		return acc
+	}, [])
 
-  console.log(album);
+	console.log(album)
 
-  const rigaAlbum = document.getElementById("cont4");
-  rigaAlbum.innerHTML = "";
-  rigaAlbum.innerHTML = `<h1 class="mt-3">Album</h1>`;
-  unici.forEach((alb) => {
-    const albumCard = document.createElement("div");
-    albumCard.classList.add(
-      "col-6",
-      "col-sm-6",
-      "col-md-4",
-      "col-lg-3",
-      "col-xl-2",
-      "gy-3"
-    );
-    albumCard.innerHTML = `
+	const rigaAlbum = document.getElementById('cont4')
+	rigaAlbum.innerHTML = ''
+	rigaAlbum.innerHTML = `<h1 class="mt-3">Album</h1>`
+	unici.forEach(alb => {
+		const albumCard = document.createElement('div')
+		albumCard.classList.add('col-6', 'col-sm-6', 'col-md-4', 'col-lg-3', 'col-xl-2', 'gy-3')
+		albumCard.innerHTML = `
         
                 <div class="card album-card rounded-3" style="height:100%">
                 <a class="text-decoration-none" href="./album.html?id=${alb.idAlbum}">
@@ -193,35 +200,35 @@ const createAlbumCard = function (Albumcard) {
                   </div></a>
                 </div>
               
-        `;
+        `
 
-    rigaAlbum.appendChild(albumCard);
-  });
-};
+		rigaAlbum.appendChild(albumCard)
+	})
+}
 
-const inputField = document.getElementById("search-input");
-inputField.addEventListener("input", function (rem) {
-  rem.preventDefault();
-  timeLastChange = new Date();
+const inputField = document.getElementById('search-input')
+inputField.addEventListener('input', function (rem) {
+	rem.preventDefault()
+	timeLastChange = new Date()
 
-  setTimeout(() => {
-    if (new Date() - timeLastChange < searchDelay) {
-      return;
-    }
-    console.log("Input change");
-    const remove = document.getElementById("cont");
-    console.log(remove);
-    const rigaArtist = document.getElementById("cont1");
-    const rigaAlbum = document.getElementById("cont4");
-    const removesFoglia = document.getElementById("sfoglia");
-    if (inputField.value !== "") {
-      searchFetch(inputField.value);
-      removesFoglia.innerHTML = "";
-    } else {
-      remove.innerHTML = "";
-      rigaArtist.innerHTML = "";
-      rigaAlbum.innerHTML = "";
-      removesFoglia.innerHTML = `
+	setTimeout(() => {
+		if (new Date() - timeLastChange < searchDelay) {
+			return
+		}
+		console.log('Input change')
+		const remove = document.getElementById('cont')
+		console.log(remove)
+		const rigaArtist = document.getElementById('cont1')
+		const rigaAlbum = document.getElementById('cont4')
+		const removesFoglia = document.getElementById('sfoglia')
+		if (inputField.value !== '') {
+			searchFetch(inputField.value)
+			removesFoglia.innerHTML = ''
+		} else {
+			remove.innerHTML = ''
+			rigaArtist.innerHTML = ''
+			rigaAlbum.innerHTML = ''
+			removesFoglia.innerHTML = `
     <h2
           class="d-flex justify-content-center justify-content-md-start mb-3 mt-4"
         >
@@ -405,38 +412,38 @@ inputField.addEventListener("input", function (rem) {
             />
           </div>
         </div>
-    `;
-    }
-  }, searchDelay);
-});
+    `
+		}
+	}, searchDelay)
+})
 
 const searchFetch = function (query) {
-  const baseURL = "https://striveschool-api.herokuapp.com/api/deezer/";
-  // const baseURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/";
-  const myUrl = baseURL + "search?q=" + query;
-  fetch(myUrl)
-    .then((response) => {
-      console.log("response", response);
-      if (response.ok) {
-        return response.json();
-      } else {
-        if (response.status === 404) {
-          throw new Error("404 - Pagina non trovata");
-        } else if (response.status === 500) {
-          throw new Error("500 - Internal server error");
-        } else {
-          throw new Error("Errore generico");
-        }
-      }
-    })
-    .then((search) => {
-      console.log("search", search);
-      createCard(search);
-      createArtistCard(search);
-      createAlbumCard(search);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
-searchFetch("queen");
+	const baseURL = 'https://striveschool-api.herokuapp.com/api/deezer/'
+	// const baseURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/";
+	const myUrl = baseURL + 'search?q=' + query
+	fetch(myUrl)
+		.then(response => {
+			console.log('response', response)
+			if (response.ok) {
+				return response.json()
+			} else {
+				if (response.status === 404) {
+					throw new Error('404 - Pagina non trovata')
+				} else if (response.status === 500) {
+					throw new Error('500 - Internal server error')
+				} else {
+					throw new Error('Errore generico')
+				}
+			}
+		})
+		.then(search => {
+			console.log('search', search)
+			createCard(search)
+			createArtistCard(search)
+			createAlbumCard(search)
+		})
+		.catch(err => {
+			console.log(err)
+		})
+}
+searchFetch('queen')
