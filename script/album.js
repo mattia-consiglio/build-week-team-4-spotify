@@ -9,6 +9,11 @@ window.onload = function () {
 
 	const id = new URLSearchParams(window.location.search).get('id')
 
+	if (!id) {
+		window.location = './404.html'
+		return
+	}
+
 	const durationToString = (duration, format = 1) => {
 		const hours = Math.floor(duration / 3600)
 		const minutes = Math.floor((duration - hours * 3600) / 60)

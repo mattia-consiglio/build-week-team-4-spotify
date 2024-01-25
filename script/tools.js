@@ -206,7 +206,7 @@ const getMostRecurrentColor = function (imgReference) {
 }
 
 const api = (endpoint = '', callback) => {
-	let url = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/' + endpoint
+	let url = 'https://striveschool-api.herokuapp.com/api/deezer/' + endpoint
 
 	fetch(url)
 		.then(response => {
@@ -217,11 +217,15 @@ const api = (endpoint = '', callback) => {
 		})
 		.then(data => {
 			if (data.error) {
+				window.location = './404.html'
 				throw new Error(data.error.message)
 			}
 			callback(data)
 		})
-		.catch(err => console.log(err))
+		.catch(
+			err => console.log(err)
+			// window.location = './404.html'
+		)
 }
 
 const removePlaceholders = () => {
