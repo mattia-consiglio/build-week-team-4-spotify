@@ -51,6 +51,66 @@ form {
 .artist-card:hover {
   background-color: rgb(53, 53, 53);
 }
+.artist-card:hover #playbut {
+  opacity: 1;
+}
+
+.artist-img {
+  max-width: 80%;
+  border-radius: 50%;
+}
+
+.cont-img {
+  position: relative;
+}
+
+#playbut {
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  fill: #121212 !important;
+  background-color: #1fdf64;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  margin-right: 15%;
+  margin-top: 5%;
+}
+
+.album-img {
+  max-width: 80%;
+}
+
+.cont-img1 {
+  position: relative;
+}
+
+#playbut1 {
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  fill: #121212 !important;
+  background-color: #1fdf64;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+}
+
+.svg-art {
+  fill: #121212;
+  width: 20px;
+  height: 20px;
+}
 
 .album-card {
   border: none;
@@ -59,14 +119,8 @@ form {
 .album-card:hover {
   background-color: rgb(53, 53, 53);
 }
-
-.artist-img {
-  max-width: 80%;
-  border-radius: 50%;
-}
-
-.album-img {
-  max-width: 80%;
+.album-card:hover #playbut1 {
+  opacity: 1;
 }
 
 .plus-svg {
@@ -116,6 +170,18 @@ form {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+}
+@media screen and (max-width: 420px) {
+  #playbut1 {
+    opacity: 0;
+    width: 45px;
+    height: 45px;
+  }
+  #playbut {
+    opacity: 0;
+    width: 45px;
+    height: 45px;
   }
 }
 @media screen and (min-width: 400px) and (max-width: 500px) {

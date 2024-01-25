@@ -50,7 +50,7 @@ const createCard = function (m) {
                     <div class="card-body w-100">
                       <div class="d-flex flex-column" >
                         <h6 class="card-title song-title">${element.title}</h6>
-                        <a class="text-white-50 name-dec " href="./artist.html?artistId=${m.data[0].artist.id}"><p class="card-text">
+                        <a class="text-white-50 name-dec " href="./artist.html?artistId=${element.artist.id}"><p class="card-text">
                         ${element.artist.name}
                         </p></a>
                         </div>
@@ -123,12 +123,13 @@ const createArtistCard = function (ArtistCard) {
                 
                 <div class="card artist-card rounded-3" style="height:100%" >
                 <a class="text-decoration-none" href="./artist.html?artistId=${art.idArtist}">
-                  <div class="d-flex justify-content-center mt-3">
-                <img
-                    src="${art.immagine}"
-                    class="card-img-top artist-img "
-                    alt="..."
+                  <div class="d-flex cont-img justify-content-center mt-3">
+                  <img
+                  src="${art.immagine}"
+                  class="card-img-top artist-img "
+                  alt="..."
                   />
+                  <button class="rounded-circle" id="playbut" onclick="playS(${art.idArtist})"><svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI svg-art"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg> </button>
                   </div>
                   <div class="card-body">
                     <h5 class="card-title text-white text-truncate">${art.nome}</h5>
@@ -136,7 +137,7 @@ const createArtistCard = function (ArtistCard) {
                     Artista
                     </p>
                   </div></a>
-                  <button id="playbut" onclick="playS(${art.idArtist})">play </button>
+                  
                 </div>
               
         `;
@@ -227,12 +228,13 @@ const createAlbumCard = function (Albumcard) {
         
                 <div class="card album-card rounded-3" style="height:100%">
                 <a class="text-decoration-none" href="./album.html?id=${alb.idAlbum}">
-                  <div class="d-flex justify-content-center mt-3">
+                  <div class="d-flex cont-img1 justify-content-center mt-3">
                 <img
                     src="${alb.immagine}"
                     class="card-img-top album-img "
                     alt="${alb.nome}"
                   />
+                  <button class="rounded-circle" id="playbut1" onclick="playS(${alb.idArtist})"><svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI svg-art"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg> </button>
                   </div>
                   <div class="card-body">
                     <h5 class="card-title text-white">${alb.nome}</h5>
