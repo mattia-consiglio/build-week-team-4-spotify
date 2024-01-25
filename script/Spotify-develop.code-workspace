@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Desktop/Spotify/assets"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "build-week-team-4-spotify",
+		"liveServer.settings.port": 5501
+	}
+}
