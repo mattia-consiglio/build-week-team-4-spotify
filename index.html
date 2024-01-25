@@ -481,17 +481,27 @@
             <div class="m-3">
               <span class="icon-medium"><i class="si si-plus-circle"></i></span>
             </div>
+            <div class="m-3">
+              <button class="btn background-transparent border-0 d-flex p-0">
+                <span class="icon-medium"
+                  ><i class="si si-plus-circle"></i
+                ></span>
+              </button>
+            </div>
           </div>
           <div class="col-md-4">
             <div
               class="audio-icons d-flex align-items-center justify-content-center column-gap-4"
             >
-              <button class="btn background-transparent border-0 d-flex p-0">
+              <button
+                class="btn background-transparent border-0 d-flex p-0"
+                id="player-shuffle"
+              >
                 <span class="icon-medium"><i class="si si-shuffle"></i></span>
               </button>
               <button
                 class="btn background-transparent border-0 d-flex p-0"
-                id="prev-button"
+                id="player-prev"
               >
                 <span class="icon-medium"><i class="si si-prev"></i></span>
               </button>
@@ -504,10 +514,16 @@
               >
                 <span class="icon-medium"><i class="si si-play"></i></span>
               </button>
-              <button class="btn background-transparent border-0 d-flex p-0">
+              <button
+                class="btn background-transparent border-0 d-flex p-0"
+                id="player-next"
+              >
                 <span class="icon-medium"><i class="si si-next"></i></span>
               </button>
-              <button class="btn background-transparent border-0 d-flex p-0">
+              <button
+                class="btn background-transparent border-0 d-flex p-0"
+                id="player-loop"
+              >
                 <span class="icon-medium"><i class="si si-loop"></i></span>
               </button>
             </div>
@@ -563,6 +579,7 @@
               aria-pressed="false"
               aria-label="Coda"
               data-encore-id="buttonTertiary"
+              id="player-quee"
             >
               <span class="icon-medium"><i class="si si-quee"></i></span>
             </button>
