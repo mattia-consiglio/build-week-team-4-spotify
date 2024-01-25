@@ -83,6 +83,9 @@ form {
   right: 0%;
   margin-right: 15%;
   margin-top: 5%;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 .album-img {
   max-width: 80%;
@@ -106,12 +109,15 @@ form {
 
   margin-right: 15%;
   margin-bottom: 5%;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .svg-art {
   fill: #121212;
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
 }
 .album-card {
   border: none;
@@ -168,6 +174,7 @@ form {
     text-overflow: ellipsis;
   }
 }
+
 @media screen and (max-width: 420px) {
   #playbut1 {
     opacity: 0;
@@ -189,20 +196,14 @@ form {
     text-overflow: ellipsis;
   }
 }
+
 body {
   font-family: Circular;
   background-color: #121212;
 }
-.avatar {
-  width: 20px;
-}
 
 .copertina {
   width: 200px;
-}
-
-.nascondi {
-  font-size: 9px;
 }
 
 .annuncio {
@@ -252,10 +253,71 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 svg {
   min-width: 20px;
-  fill: grey;
+  // fill: grey;
   margin-left: 15%;
   margin-right: 15%;
 }
+// .avatar {
+//   width: 35px;
+// }
+
+// .nascondi {
+//   font-size: 9px;
+// }
+// .prime-icone svg {
+//   min-width: 25px;
+// }
+// .prime-icone a {
+//   font-size: 17px;
+//   margin-left: 10px;
+// }
+// .icone2 svg {
+//   min-width: 25px;
+//   height: 25px;
+// }
+// .icone2 a {
+//   font-size: 17px;
+
+//   margin-left: 10px;
+// }
+// .icone2 button {
+//   width: 25px;
+//   height: 25px;
+//   border: none;
+//   background-color: rgb(10, 75, 10);
+//   margin-right: 12px;
+// }
+// .icone2 button svg {
+//   width: 12.5px;
+//   height: 12.5px;
+//   fill: #1fdf64;
+// }
+// .brani-like {
+//   max-width: 25px;
+//   max-height: 25px;
+// }
+// .playlist {
+//   height: 580px;
+// }
+
+// .playlist p {
+//   font-size: 17px;
+//   margin-bottom: 13px;
+//   margin-left: 10px;
+//   color: rgb(180, 180, 180);
+// }
+// .nascondi {
+//   font-size: 15px;
+//   color: rgb(180, 180, 180);
+//   // width: 200px;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+// }
+// .colonna3,
+// .colonna1 {
+//   min-width: 270px;
+// }
 .play {
   fill: black;
   border-radius: 1rem;
