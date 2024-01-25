@@ -5,8 +5,8 @@ const progressInput = document.getElementById('seek-bar')
 const durationDisplay = document.getElementById('duration')
 const audioSource = document.getElementById('audio-source')
 const playPauseButton = document.getElementById('player-play-pause-button')
-const prevButton = document.getElementById('prev-button')
-const nextButton = document.getElementById('next-button')
+const prevButton = document.getElementById('player-prev')
+const nextButton = document.getElementById('player-next')
 const volumeInput = document.getElementById('volume-input')
 const volumeButton = document.getElementById('volume-button')
 const coverImage = document.getElementById('player-cover-image')
@@ -78,6 +78,8 @@ const setVolume = vol => {
 	volumeInput.value = vol
 	console.log(vol)
 	const icon = volumeButton.querySelector('span')
+	updateRangeInput(volumeInput)
+
 	if (vol > 0.66) {
 		icon.innerHTML = '<i class="si si-volume-high"></i>'
 	} else if (vol > 0.33) {
