@@ -43,10 +43,7 @@ window.onload = function () {
 			row.innerHTML = `
 		<div class="table-cell" role="gridcell" aria-colindex="1">
 			<button class="btn bg-transparent"><span class="icon-medium">
-				<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24"
-													class="Svg-sc-ytk21e-0 bneLcE"><path
-														d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
-													</path></svg>
+				<i class="si si-play"></i></svg>
 											</span></button>
 										<div>${i + 1}</div>
 									</div>
@@ -74,12 +71,7 @@ window.onload = function () {
 										<div>${durationToString(track.duration, 2)}</div>
 										<button class="btn bg-transparent d-flex border-0 py-0 opacity-0"
 											aria-label="Altre opzioni per ${track.title}" tabindex="-1"><span
-												aria-hidden="true" class="icon-medium"><svg data-encore-id="icon" role="img" aria-hidden="true"
-													viewBox="0 0 16 16">
-													<path
-														d="M3 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm6.5 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM16 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-													</path>
-												</svg>
+												aria-hidden="true" class="icon-medium"><i class="si si-dots-horizontal"></i>
 											</span>
 										</button>
 									</div>
