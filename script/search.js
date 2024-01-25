@@ -1,3 +1,30 @@
+const durationToString = (duration, format = 1) => {
+  const hours = Math.floor(duration / 3600);
+  const minutes = Math.floor((duration - hours * 3600) / 60);
+  const seconds = Math.floor(duration - hours * 3600 - minutes * 60);
+  let hoursString;
+  let minutesString;
+  if (format === 1) {
+    hoursString =
+      hours > 1 ? hours + " ore " : hours === 1 ? hours + " ora " : "";
+    minutesString =
+      minutes > 1
+        ? minutes + " minuti"
+        : minutes === 1
+        ? minutes + " minuto"
+        : "";
+    return `${hoursString}${minutesString}`;
+  }
+  if (format === 2) {
+    hoursString = hours ? hours + ":" : "";
+    minutesString = minutes + ":";
+
+    return `${hoursString}${minutesString}${seconds
+      .toString()
+      .padStart(2, "0")}`;
+  }
+};
+
 const createCardArt = 0;
 let timeLastChange = new Date();
 const searchDelay = 500;
@@ -50,7 +77,9 @@ const createCard = function (m) {
                     <div class="card-body w-100">
                       <div class="d-flex flex-column" >
                         <h6 class="card-title song-title">${element.title}</h6>
-                        <a class="text-white-50 name-dec " href="./artist.html?artistId=${element.artist.id}"><p class="card-text">
+                        <a class="text-white-50 name-dec " href="./artist.html?artistId=${
+                          element.artist.id
+                        }"><p class="card-text">
                         ${element.artist.name}
                         </p></a>
                         </div>
@@ -58,7 +87,10 @@ const createCard = function (m) {
                     </div>
                     <div class="col-5 d-flex justify-content-evenly align-items-center flex-wrap">
                       <button class='btn plus-svg border border-0 btn-bg-transparent ' ><i class="bi bi-plus-circle"></i></button>
-                      <p class="m-0">${element.duration}</p>
+                      <p class="m-0">${durationToString(
+                        element.duration,
+                        2
+                      )}</p>
                       <button type="button" class="btn btn-white  dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots"></i>
 
                       </button>
