@@ -69,12 +69,13 @@ $icon-sizes: (
   .icon-#{$name} {
     display: inline-flex;
     width: $size;
-    height: $size;
+    // height: $size;
   }
 }
 
 svg {
   fill: currentColor;
+	width: 100%;
 }
 
 .main-actions {
@@ -198,4 +199,15 @@ img.placeholder {
 .customBg {
   background-color: $body-bg-dark;
   transition: 250ms ease-out;
+}
+
+.player {
+	.play-pause-button {
+		width: var(--button-size);
+		height: var(--button-size);
+	}
+}
+
+.text-decoration-underline-hover:hover {
+	text-decoration: underline !important;
 }
