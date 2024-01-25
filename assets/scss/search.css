@@ -6,43 +6,28 @@
 .icon {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 5px;
 }
 
 #search-input {
   padding-left: 25px;
   /* text-align: center; */
+  min-width: 100%;
 }
 
 .input-container {
   position: relative;
-  width: 200px;
+  width: 100%;
 }
 
-input::-webkit-input-placeholder {
-  width: 200px;
+@media (min-width: 768px) {
+  .input-container {
+    width: 200px;
+  }
 }
-
-input::-moz-placeholder {
-  width: 200px;
-}
-
-input:-ms-input-placeholder {
-  width: 200px;
-}
-
-input::-ms-input-placeholder {
-  width: 200px;
-}
-
-input::placeholder {
-  width: 200px;
-}
-
 form {
-  width: 200px;
+  width: 100%;
 }
 
 .icona-spotify {
@@ -66,6 +51,66 @@ form {
 .artist-card:hover {
   background-color: rgb(53, 53, 53);
 }
+.artist-card:hover #playbut {
+  opacity: 1;
+}
+
+.artist-img {
+  max-width: 80%;
+  border-radius: 50%;
+}
+
+.cont-img {
+  position: relative;
+}
+
+#playbut {
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  fill: #121212 !important;
+  background-color: #1fdf64;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  margin-right: 15%;
+  margin-top: 5%;
+}
+
+.album-img {
+  max-width: 80%;
+}
+
+.cont-img1 {
+  position: relative;
+}
+
+#playbut1 {
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  fill: #121212 !important;
+  background-color: #1fdf64;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+}
+
+.svg-art {
+  fill: #121212;
+  width: 20px;
+  height: 20px;
+}
 
 .album-card {
   border: none;
@@ -74,14 +119,8 @@ form {
 .album-card:hover {
   background-color: rgb(53, 53, 53);
 }
-
-.artist-img {
-  max-width: 80%;
-  border-radius: 50%;
-}
-
-.album-img {
-  max-width: 80%;
+.album-card:hover #playbut1 {
+  opacity: 1;
 }
 
 .plus-svg {
@@ -107,22 +146,15 @@ form {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .circle-btn {
   width: 32px;
   height: 32px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -140,6 +172,18 @@ form {
     text-overflow: ellipsis;
   }
 }
+@media screen and (max-width: 420px) {
+  #playbut1 {
+    opacity: 0;
+    width: 45px;
+    height: 45px;
+  }
+  #playbut {
+    opacity: 0;
+    width: 45px;
+    height: 45px;
+  }
+}
 @media screen and (min-width: 400px) and (max-width: 500px) {
   .song-title {
     width: 150px;
@@ -147,4 +191,90 @@ form {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+}
+body {
+  font-family: Circular;
+  background-color: #121212;
+}
+
+.avatar {
+  width: 20px;
+}
+
+.copertina {
+  width: 200px;
+}
+
+.nascondi {
+  font-size: 9px;
+}
+
+.annuncio {
+  background: linear-gradient(to bottom, #212121, #000000);
+}
+
+.buonasera img {
+  width: 50px;
+}
+
+.early {
+  background-color: #2d2d2d;
+}
+
+.card {
+  background-color: #171717;
+}
+
+footer img {
+  width: 40px;
+}
+
+.roundel {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/* Nasconde i controlli dell'elemento audio tranne la barra dei secondi */
+audio {
+  width: 100%; /* Imposta la larghezza desiderata */
+}
+
+audio::-webkit-media-controls {
+  display: none !important;
+}
+
+audio::-webkit-media-controls-panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  display: flex !important;
+}
+
+svg {
+  min-width: 20px;
+  fill: grey;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.play {
+  fill: black;
+  border-radius: 1rem;
+}
+
+.altre svg {
+  margin-left: -5%;
+  margin-right: -5%;
+  width: 15px;
+}
+
+.d-none svg {
+  margin-left: 0;
+  margin-right: 0;
+  width: 20px;
 }/*# sourceMappingURL=search.css.map */

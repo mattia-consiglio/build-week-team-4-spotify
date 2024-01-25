@@ -12,14 +12,14 @@ const createCard = function (m) {
   
   <h1 class="mb-2">Artista</h1>
   <div class="card artist-card mb-3 h-75">
-  <a class="text-decoration-none text-white" href="./artist.html">
+  <a class="text-decoration-none text-white" href="./artist.html?artistId=${m.data[0].artist.id}">
   <div class="card-body">
   <img src="${m.data[0].artist.picture_small}" class="rounded-circle mb-2"  />
   <h5 class="card-title fw-bold fs-5 ">${m.data[0].artist.name}</h5>
   <p class="card-text text-white-50 ">
   ${m.data[0].artist.type}
   </p>
-  <button>play </button>
+
   </div></a>
   </div>
   
@@ -50,7 +50,7 @@ const createCard = function (m) {
                     <div class="card-body w-100">
                       <div class="d-flex flex-column" >
                         <h6 class="card-title song-title">${element.title}</h6>
-                        <a class="text-white-50 name-dec " href="./album.html"><p class="card-text">
+                        <a class="text-white-50 name-dec " href="./artist.html?artistId=${element.artist.id}"><p class="card-text">
                         ${element.artist.name}
                         </p></a>
                         </div>
@@ -123,12 +123,13 @@ const createArtistCard = function (ArtistCard) {
                 
                 <div class="card artist-card rounded-3" style="height:100%" >
                 <a class="text-decoration-none" href="./artist.html?artistId=${art.idArtist}">
-                  <div class="d-flex justify-content-center mt-3">
-                <img
-                    src="${art.immagine}"
-                    class="card-img-top artist-img "
-                    alt="..."
+                  <div class="d-flex cont-img justify-content-center mt-3">
+                  <img
+                  src="${art.immagine}"
+                  class="card-img-top artist-img "
+                  alt="..."
                   />
+                  <button class="rounded-circle" id="playbut" onclick="playS(${art.idArtist})"><svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI svg-art"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg> </button>
                   </div>
                   <div class="card-body">
                     <h5 class="card-title text-white text-truncate">${art.nome}</h5>
@@ -136,6 +137,7 @@ const createArtistCard = function (ArtistCard) {
                     Artista
                     </p>
                   </div></a>
+                  
                 </div>
               
         `;
@@ -143,6 +145,54 @@ const createArtistCard = function (ArtistCard) {
     rigaArtist.appendChild(artistCard);
   });
 };
+//const playS = function (riproduci) {
+// fetch(
+//   "https://striveschool-api.herokuapp.com/api/deezer/artist/" +
+//     artistId +
+//     "/top?limit=10"
+// )
+// .then((response) => {
+//   console.log("response", response);
+//   if (response.ok) {
+//     return response.json();
+//   } else {
+//     if (response.status === 404) {
+//       throw new Error("404 - Pagina non trovata");
+//     } else if (response.status === 500) {
+//       throw new Error("500 - Internal server error");
+//     } else {
+//       throw new Error("Errore generico");
+//     }
+//   }
+// })
+// .then((search) => {
+
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
+//};
+
+// const playS = function (riproduci) {
+//   let artisti = riproduci.data.map((canz) => ({
+//     nome: canz.artist.name,
+//     immagine: canz.artist.picture_medium,
+//     tipo: canz.artist.type,
+//     idArtist: canz.artist.id,
+//     mp3: canz.preview,
+//   }));
+//   console.log(artisti);
+//   let unici = artisti.reduce((ac, ripr) => {
+//     if (!ac.find((a) => a.nome === ripr.nome)) {
+//       ac.push(ripr);
+//     }
+//     return ac;
+//   }, []);
+//   console.log(unici);
+//   const c = new Audio(unici[0].mp3);
+//   c.play();
+// };
+
 const createAlbumCard = function (Albumcard) {
   let album = Albumcard.data.map((album) => ({
     nome: album.album.title,
@@ -178,12 +228,13 @@ const createAlbumCard = function (Albumcard) {
         
                 <div class="card album-card rounded-3" style="height:100%">
                 <a class="text-decoration-none" href="./album.html?id=${alb.idAlbum}">
-                  <div class="d-flex justify-content-center mt-3">
+                  <div class="d-flex cont-img1 justify-content-center mt-3">
                 <img
                     src="${alb.immagine}"
                     class="card-img-top album-img "
                     alt="${alb.nome}"
                   />
+                  <button class="rounded-circle" id="playbut1" onclick="playS(${alb.idArtist})"><svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI svg-art"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg> </button>
                   </div>
                   <div class="card-body">
                     <h5 class="card-title text-white">${alb.nome}</h5>
@@ -434,9 +485,10 @@ const searchFetch = function (query) {
       createCard(search);
       createArtistCard(search);
       createAlbumCard(search);
+      playS(search);
     })
     .catch((err) => {
       console.log(err);
     });
 };
-searchFetch("queen");
+// searchFetch("queen");
