@@ -43,6 +43,7 @@ audioPlayer.addEventListener('timeupdate', function () {
 	currentTimeDisplay.textContent = formatTime(currentTime)
 	if (!isChangingTime) {
 		progressInput.value = currentTime
+		updateRangeInput(progressInput)
 	}
 })
 
@@ -122,4 +123,11 @@ volumeButton.addEventListener('click', () => {
 	} else {
 		setVolume(0)
 	}
+})
+
+document.querySelectorAll('input[type=range]').forEach(input => {
+	updateRangeInput(input)
+	input.addEventListener('input', () => {
+		updateRangeInput(input)
+	})
 })
