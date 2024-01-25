@@ -189,3 +189,86 @@ form {
     text-overflow: ellipsis;
   }
 }
+body {
+  font-family: Circular;
+  background-color: #121212;
+}
+.avatar {
+  width: 20px;
+}
+
+.copertina {
+  width: 200px;
+}
+
+.nascondi {
+  font-size: 9px;
+}
+
+.annuncio {
+  background: linear-gradient(to bottom, #212121, #000000);
+}
+
+.buonasera img {
+  width: 50px;
+}
+
+.early {
+  background-color: #2d2d2d;
+}
+
+.card {
+  background-color: #171717;
+}
+
+footer img {
+  width: 40px;
+}
+
+.roundel {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/* Nasconde i controlli dell'elemento audio tranne la barra dei secondi */
+audio {
+  width: 100%; /* Imposta la larghezza desiderata */
+}
+
+audio::-webkit-media-controls {
+  display: none !important;
+}
+
+audio::-webkit-media-controls-panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  display: flex !important;
+}
+svg {
+  min-width: 20px;
+  fill: grey;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.play {
+  fill: black;
+  border-radius: 1rem;
+}
+
+.altre svg {
+  margin-left: -5%;
+  margin-right: -5%;
+  width: 15px;
+}
+
+.d-none svg {
+  margin-left: 0;
+  margin-right: 0;
+  width: 20px;
+}

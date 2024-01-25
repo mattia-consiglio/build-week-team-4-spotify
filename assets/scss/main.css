@@ -11981,6 +11981,10 @@ textarea.form-control-lg {
   --background-base: $body-bg-dark;
 }
 
+.main-row {
+  height: calc(100vh - 72px);
+}
+
 .icon-large {
   display: inline-flex;
   width: 32px;
@@ -12106,4 +12110,12 @@ img.placeholder:before {
 .customBg {
   background-color: #121212;
   transition: 250ms ease-out;
+}
+
+.riproduci {
+  position: fixed;
+  height: 72px;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
 }/*# sourceMappingURL=main.css.map */
