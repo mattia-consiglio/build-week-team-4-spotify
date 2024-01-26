@@ -16,7 +16,6 @@ body {
 }
 
 .annuncio {
-  background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(#000000));
   background: linear-gradient(to bottom, #212121, #000000);
 }
 
@@ -49,15 +48,12 @@ audio::-webkit-media-controls {
 }
 
 audio::-webkit-media-controls-panel {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
-  display: -webkit-box !important;
   display: flex !important;
 }
 
