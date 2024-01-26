@@ -11,30 +11,30 @@
 //   });
 // });
 const createAlbumCard = function (Albumcard) {
-  let album = Albumcard.data.map((album) => ({
-    nome: album.album.title,
-    immagine: album.album.cover_medium,
-    tipo: album.album.type,
-    artista: album.artist.name,
-    idAlbum: album.album.id,
-  }));
+	let album = Albumcard.data.map(album => ({
+		nome: album.album.title,
+		immagine: album.album.cover_medium,
+		tipo: album.album.type,
+		artista: album.artist.name,
+		idAlbum: album.album.id,
+	}))
 
-  let unici = album.reduce((acc, artista) => {
-    if (!acc.find((a) => a.nome === artista.nome)) {
-      acc.push(artista);
-    }
-    return acc;
-  }, []);
+	let unici = album.reduce((acc, artista) => {
+		if (!acc.find(a => a.nome === artista.nome)) {
+			acc.push(artista)
+		}
+		return acc
+	}, [])
 
-  console.log(album);
+	console.log(album)
 
-  const rigaAlbum = document.getElementById("album");
-  rigaAlbum.innerHTML = "";
-  rigaAlbum.innerHTML = `<h1 class="mt-3">Album</h1>`;
-  unici.forEach((alb) => {
-    const albumCard = document.createElement("div");
-    albumCard.classList.add("col-6", "col-lg-3", "gy-3");
-    albumCard.innerHTML = `
+	const rigaAlbum = document.getElementById('album')
+	rigaAlbum.innerHTML = ''
+	rigaAlbum.innerHTML = `<h1 class="mt-3">Album</h1>`
+	unici.forEach(alb => {
+		const albumCard = document.createElement('div')
+		albumCard.classList.add('col-6', 'col-lg-3', 'gy-3')
+		albumCard.innerHTML = `
         
                 <div class="card album-card rounded-3" style="height:100%">
                 <a class="text-decoration-none" href="./album.html?id=${alb.idAlbum}">
@@ -53,85 +53,85 @@ const createAlbumCard = function (Albumcard) {
                   </div></a>
                 </div>
               
-        `;
+        `
 
-    rigaAlbum.appendChild(albumCard);
-  });
-};
+		rigaAlbum.appendChild(albumCard)
+	})
+}
 
 const searchFetch = function (query) {
-  const baseURL = "https://striveschool-api.herokuapp.com/api/deezer/";
-  // const baseURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/";
-  const myUrl = baseURL + "search?q=" + query;
-  fetch(myUrl)
-    .then((response) => {
-      console.log("response", response);
-      if (response.ok) {
-        return response.json();
-      } else {
-        if (response.status === 404) {
-          throw new Error("404 - Pagina non trovata");
-        } else if (response.status === 500) {
-          throw new Error("500 - Internal server error");
-        } else {
-          throw new Error("Errore generico");
-        }
-      }
-    })
-    .then((search) => {
-      console.log("search", search);
-      // createCard(search)
-      // createArtistCard(search)
-      createAlbumCard(search);
-      creaAnnuncio(search);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
-searchFetch("queen");
+	const baseURL = 'https://striveschool-api.herokuapp.com/api/deezer/'
+	// const baseURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/";
+	const myUrl = baseURL + 'search?q=' + query
+	fetch(myUrl)
+		.then(response => {
+			console.log('response', response)
+			if (response.ok) {
+				return response.json()
+			} else {
+				if (response.status === 404) {
+					throw new Error('404 - Pagina non trovata')
+				} else if (response.status === 500) {
+					throw new Error('500 - Internal server error')
+				} else {
+					throw new Error('Errore generico')
+				}
+			}
+		})
+		.then(search => {
+			console.log('search', search)
+			// createCard(search)
+			// createArtistCard(search)
+			createAlbumCard(search)
+			creaAnnuncio(search)
+		})
+		.catch(err => {
+			console.log(err)
+		})
+}
+searchFetch('queen')
 
-const buttonPlay = document.getElementById("play-button");
+const buttonPlay = document.getElementById('play-button')
 
-document.addEventListener("DOMContentLoaded", function () {
-  function hideAnnouncement() {
-    const announcement = document.querySelector(".annuncio");
-    if (announcement) {
-      announcement.classList.add("d-none");
-    }
-  }
-});
+document.addEventListener('DOMContentLoaded', function () {
+	function hideAnnouncement() {
+		const announcement = document.querySelector('.annuncio')
+		if (announcement) {
+			announcement.classList.add('d-none')
+		}
+	}
+})
 
 const creaAnnuncio = function (Albumcard) {
-  let album = Albumcard.data.map((album) => ({
-    nome: album.album.title,
-    immagine: album.album.cover_medium,
-    tipo: album.album.type,
-    artista: album.artist.name,
-    idAlbum: album.album.id,
-  }));
+	let album = Albumcard.data.map(album => ({
+		nome: album.album.title,
+		immagine: album.album.cover_medium,
+		tipo: album.album.type,
+		artista: album.artist.name,
+		idAlbum: album.album.id,
+	}))
 
-  let unici = album.reduce((acc, artista) => {
-    if (!acc.find((a) => a.nome === artista.nome)) {
-      acc.push(artista);
-    }
-    return acc;
-  }, []);
+	let unici = album.reduce((acc, artista) => {
+		if (!acc.find(a => a.nome === artista.nome)) {
+			acc.push(artista)
+		}
+		return acc
+	}, [])
 
-  console.log(album);
+	console.log(album)
 
-  const rigaAlbum = document.getElementById("annuncio");
-  rigaAlbum.innerHTML = "";
-  //   rigaAlbum.classList.add("row"); // Aggiungi la classe Bootstrap "row"
+	const rigaAlbum = document.getElementById('annuncio')
+	rigaAlbum.innerHTML = ''
+	//   rigaAlbum.classList.add("row"); // Aggiungi la classe Bootstrap "row"
 
-  // Verifica se ci sono elementi in 'unici'
-  if (unici.length > 0) {
-    const alb = unici[0]; // Prendi solo il primo elemento di 'unici'
-    const albumCard = document.createElement("div");
+	// Verifica se ci sono elementi in 'unici'
+	if (unici.length > 0) {
+		const alb = unici[0] // Prendi solo il primo elemento di 'unici'
+		const albumCard = document.createElement('div')
 
-    albumCard.classList.add("col-md-12"); // Aggiungi la classe per impostare la larghezza
+		albumCard.classList.add('col-md-12') // Aggiungi la classe per impostare la larghezza
 
-    albumCard.innerHTML = `
+		albumCard.innerHTML = `
         <div class="d-flex"> <!-- Utilizza la flessibilità di Bootstrap -->
           <div class="col-md-4">
             <img
@@ -173,8 +173,8 @@ const creaAnnuncio = function (Albumcard) {
             </div>
           </div>
         </div>
-      `;
+      `
 
-    rigaAlbum.appendChild(albumCard);
-  }
-};
+		rigaAlbum.appendChild(albumCard)
+	}
+}
