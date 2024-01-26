@@ -4,48 +4,37 @@ console.log(addressBarContent);
 const artistId = addressBarContent.get("artistId");
 console.log(artistId);
 
-document
-  .addEventListener("DOMContentLoaded", () => {
-    fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((artistData) => {
-        // const body = document.getElementsByTagName("body");
-        const container = document.getElementById("center");
-        const imgElement = document.createElement("img");
-        const artistName = document.getElementById("artist-name");
-        const listeners = document.getElementById("artist-listeners");
-        listeners.innerHTML = `${artistData.nb_fan} Ascoltatori mensili`;
-        artistName.innerText = artistData.name;
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((artistData) => {
+      // const body = document.getElementsByTagName("body");
+      const container = document.getElementById("center");
+      const imgElement = document.createElement("img");
+      const artistName = document.getElementById("artist-name");
+      const listeners = document.getElementById("artist-listeners");
+      listeners.innerHTML = `${artistData.nb_fan} Ascoltatori mensili`;
+      artistName.innerText = artistData.name;
 
-        // body.appendChild(container);
-        // verifiedAccount.innerHTML = `<i class="bi bi-patch-check-fill"></i> Account verificato`;
-        container.style.backgroundImage = `url('${artistData.picture_xl}')`;
-        // imgElement.alt = artistData.name;
-        artistName.textContent = artistData.name;
-        container.appendChild(imgElement);
-        // container.appendChild(artistName);
-        // container.appendChild(listeners);
-        // container.appendChild(button);
-      })
-      .catch((error) => {
-        console.error("Error fetching artist data:", error);
-      });
-    container.style.backgroundImage = `url('${artistData.picture_xl}')`;
-
-    artistName.textContent = artistData.name;
-    container.appendChild(imgElement);
-    brani.appendChild(imgElement);
-  })
-  .catch((error) => {
-    console.error("Error fetching artist data:", error);
-  });
+      // body.appendChild(container);
+      // verifiedAccount.innerHTML = `<i class="bi bi-patch-check-fill"></i> Account verificato`;
+      container.style.backgroundImage = `url('${artistData.picture_xl}')`;
+      // imgElement.alt = artistData.name;
+      artistName.textContent = artistData.name;
+      container.appendChild(imgElement);
+      // container.appendChild(artistName);
+      // container.appendChild(listeners);
+      // container.appendChild(button);
+    })
+    .catch((error) => {
+      console.error("Error fetching artist data:", error);
+    });
+});
 
 fetch(
   "https://striveschool-api.herokuapp.com/api/deezer/artist/" +
