@@ -21,6 +21,7 @@ let minVolume = 0.25
 let volume = 0.6
 let shuffleActive = false
 let isPlaying = false
+let firstPlay = true
 
 let currentTrackId = null
 const sourceTracks = []
@@ -101,7 +102,8 @@ audioPlayer.addEventListener('timeupdate', function () {
 })
 
 //cambia la sorgente audio
-const playTrack = function (track) {
+const playTrack = function (track, starPlay = true) {
+	console.log(track);
 	currentTrackId = track.id
 	audioLoaded = false
 	audioSource.src = track.preview
@@ -111,14 +113,16 @@ const playTrack = function (track) {
 	title.innerText = track.title
 	artist.innerText = track.artist.name
 	artist.href = './artist.html?artistId=' + track.artist.id
-	// const itervalId = setInterval(() => {
-	// 	if (audioLoaded) {
-	// 		clearInterval(itervalId)
-	// 		audioPlayer.play()
-	// 		isPlaying = true
-	// 		updatePlayPauseButton()
-	// 	}
-	// }, 100)
+	if (starPlay) {
+		const itervalId = setInterval(() => {
+			if (audioLoaded) {
+				clearInterval(itervalId)
+				audioPlayer.play()
+				isPlaying = true
+				updatePlayPauseButton()
+			}
+		}, 100)
+	}
 }
 
 const playQuee = () => {}
@@ -158,13 +162,13 @@ const setVolume = vol => {
 
 // Inizializza il player
 const initializePlayer = () => {
-	const localSettings = localStorage.getItem('playerSetting')
-	if (localSettings) {
-		const localSettings = JSON.parse(localSettings)
-		playerSetting.shuffle = localSettings.shuffle
-		playerSetting.repeat = localSettings.repeat
-		playerSetting.volume = localSettings.volume
-	}
+	// const localSettings = localStorage.getItem('playerSetting')
+	// if (localSettings) {
+	// 	const localSettings = JSON.parse(localSettings)
+	// 	playerSetting.shuffle = localSettings.shuffle
+	// 	playerSetting.repeat = localSettings.repeat
+	// 	playerSetting.volume = localSettings.volume
+	// }
 	setVolume(playerSetting.volume)
 	playTrack({
 		id: 568120922,
@@ -176,7 +180,7 @@ const initializePlayer = () => {
 			id: 412,
 			name: 'Queen',
 		},
-	})
+	}, false)
 }
 
 initializePlayer()

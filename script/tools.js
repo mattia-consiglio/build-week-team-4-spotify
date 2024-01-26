@@ -182,7 +182,9 @@ const findMostRecurrentColor = function (colorMap) {
     }
   }
 
-  if (Object.keys(colorMap).length / highestValue > 50) {
+  const relation = Object.keys(colorMap).length / highestValue
+  console.log(relation);
+  if (relation > 4) {
     const hsl = hexToHSL(mostRecurrent);
     if (hsl.s < 70) {
       return hslToHex(

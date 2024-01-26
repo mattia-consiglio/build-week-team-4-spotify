@@ -3,6 +3,10 @@ console.log(addressBarContent)
 
 const artistId = addressBarContent.get('artistId')
 console.log(artistId)
+//  if (!artistId) {
+//     window.location = "./404.html";
+//     return;
+//   }
 
 document.addEventListener('DOMContentLoaded', () => {
 	fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/' + artistId)

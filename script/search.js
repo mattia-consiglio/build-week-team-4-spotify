@@ -523,4 +523,8 @@ const searchFetch = function (query) {
       console.log(err);
     });
 };
-// searchFetch("queen");
+
+const query = new URLSearchParams(window.location.search).get("q");
+if (query) {
+  searchFetch(query);
+}

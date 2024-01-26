@@ -50,7 +50,7 @@ window.onload = function () {
       row.setAttribute("role", "row");
       row.innerHTML = `
 		<div class="table-cell" role="gridcell" aria-colindex="1">
-			<button class="btn bg-transparent"><span class="icon-medium">
+			<button class="btn bg-transparent"><span class="icon-medium" onclick="playTrack({id:${track.id}, title: '${track.title}', preview: '${track.preview}', artist: {id: ${track.artist.id}, name: '${track.artist.name}'}, cover: '${track.album.cover_small}'})">
 				<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24"
 													class="Svg-sc-ytk21e-0 bneLcE"><path
 														d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
