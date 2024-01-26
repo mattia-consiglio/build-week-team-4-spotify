@@ -146,6 +146,7 @@ window.onload = function () {
       }, 100);
     });
     removePlaceholders();
+    generateTracks(data.tracks.data, "album");
   };
 
   api("album/" + id, fillInfo);

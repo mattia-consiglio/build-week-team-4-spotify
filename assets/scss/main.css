@@ -13385,6 +13385,7 @@ textarea.form-control-lg {
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 32px;
+  min-width: 32px;
 }
 
 .icon-medium {
@@ -13392,6 +13393,7 @@ textarea.form-control-lg {
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 16px;
+  min-width: 16px;
 }
 
 .icon-small {
@@ -13399,6 +13401,7 @@ textarea.form-control-lg {
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 14px;
+  min-width: 14px;
 }
 
 svg {
@@ -13532,11 +13535,6 @@ img.placeholder:before {
   transition: 250ms ease-out;
 }
 
-.player .play-pause-button {
-  width: var(--button-size);
-  height: var(--button-size);
-}
-
 .text-decoration-underline-hover:hover {
   text-decoration: underline !important;
 }
@@ -13547,6 +13545,10 @@ img.placeholder:before {
   bottom: 0;
   width: 100%;
   background-color: #000000;
+}
+.riproduci .play-pause-button {
+  width: var(--button-size);
+  height: var(--button-size);
 }
 
 .avatar {
@@ -13559,6 +13561,7 @@ img.placeholder:before {
 
 .prime-icone svg {
   min-width: 25px;
+  width: 25px;
 }
 
 .prime-icone a {
@@ -13568,6 +13571,7 @@ img.placeholder:before {
 
 .icone2 svg {
   min-width: 25px;
+  max-width: 25px;
   height: 25px;
 }
 
@@ -13617,6 +13621,24 @@ img.placeholder:before {
 .colonna3,
 .colonna1 {
   min-width: 270px;
+}
+
+.circle-btn {
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.circle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 input[type=range] {

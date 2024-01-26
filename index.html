@@ -1,534 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Homepage spotify</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/circular-font.css" />
-    <link rel="stylesheet" href="assets/scss/main.css">
-    <link rel="stylesheet" href="assets/scss/homepage.css" />
-  </head>
-  <body data-bs-theme="dark">
-    <main>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-2 bg-black d-none d-md-block">
-            <div class="mb-3">
-              <a href="#" class="text-white">
-                <i class="bi bi-three-dots"></i
-              ></a>
-              <br />
-              <a href="#" class="text-light text-decoration-none">
-                <svg
-                  data-encore-id="icon"
-                  role="img"
-                  aria-hidden="true"
-                  class="Svg-sc-ytk21e-0 bneLcE home-icon"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z"
-                  ></path>
-                </svg>
-                Home</a
-              >
-              <br />
-              <a href="#" class="text-light text-decoration-none">
-                <i class="bi bi-search"> Cerca</i></a
-              >
-              <br />
-              <a href="#" class="text-white text-decoration-none">
-                <svg
-                  data-encore-id="icon"
-                  role="img"
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  class="Svg-sc-ytk21e-0 bneLcE"
-                >
-                  <path
-                    d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z"
-                  ></path></svg
-                >La tua libreria</a
-              >
-            </div>
-            <div>
-              <a href="#" class="text-white text-decoration-none">
-                <i class="bi bi-plus-square"> Crea playlist</i></a
-              >
-              <br />
-              <a href="#" class="text-white text-decoration-none">
-                <i class="bi bi-bookmark-heart"> Brani che ti piacciono</i></a
-              >
-              <br />
-              <a href="#" class="text-white text-decoration-none">
-                <i class="bi bi-bookmark">I tuoi episodi</i>
-              </a>
-            </div>
-            <div id="to-fill"></div>
-          </div>
-          <div class="col-12 col-md-8">
-            <div class="row mt-3">
-              <div class="col d-flex justify-content-between">
-                <div class="d-flex flex-grow-1">
-                  <a class="text-white" href="#"
-                    ><i class="bi bi-caret-left"></i
-                  ></a>
-                  <a class="text-white" href="#"
-                    ><i class="bi bi-caret-right"></i
-                  ></a>
-                </div>
-                <div class="dropdown">
-                  <button
-                    class="btn btn-black dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src="./assets/imgs/main/image-1.jpg"
-                      alt="avatar"
-                      class="avatar rounded-3"
-                    />
-                    Utente
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="row annuncio p-3 d-none d-md-flex">
-                <div class="col-4">
-                  <img
-                    src="./assets/imgs/main/image-12.jpg"
-                    alt="copertina album"
-                    class="copertina"
-                  />
-                </div>
-                <div class="col-7">
-                  <h6>ALBUM</h6>
-                  <h2>VIOLA (Feat. Salmo)</h2>
-                  <p>Fedez, Salmo</p>
-                  <p>Ascolta il nuovo singolo di Fedez e Salmo!</p>
-                  <button
-                    type="button"
-                    class="btn btn-success roundel px-4 text-black"
-                  >
-                    Play
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-black border border-white roundel px-4 mx-1"
-                  >
-                    Salva
-                  </button>
-                  <a href="#" class="text-white mx-3">
-                    <i class="bi bi-three-dots"></i
-                  ></a>
-                </div>
-                <div class="col-1">
-                  <button
-                    type="button"
-                    class="btn btn-dark nascondi text-secondary"
-                  >
-                    NASCONDI ANNUNCI
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col buonasera mt-5">
-              <h6 class="text-white">Buonasera</h6>
-              <div class="row">
-                <!-- da mettere alla row qui sopra il gatter -->
-                <div class="col">
-                  <div class="row">
-                    <div class="col-6 col-md-4">
-                      <div class="row">
-                        <div class="col-3">
-                          <img src="./assets/imgs/main/image-14.jpg" />
-                        </div>
-                        <div class="col-9 early">
-                          <p class="text-white">early stage emily sindrome</p>
-                        </div>
-                      </div>
-                    </div>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Homepage spotify</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+		/>
+		<link rel="stylesheet" href="assets/css/circular-font.css" />
+		<link rel="stylesheet" href="assets/scss/main.css" />
+		<link rel="stylesheet" href="assets/scss/homepage.css" />
+	</head>
+	<body data-bs-theme="dark">
+		<main>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-3 bg-black d-none d-md-block">
+						<div class="mb-4 mt-4 prime-icone">
+							<div class="mb-2 d-flex align-items-center"></div>
+							<div class="mb-2 d-flex align-items-center">
+								<a href="./index.html" class="text-light text-decoration-none">
+									<svg
+										data-encore-id="icon"
+										role="img"
+										aria-hidden="true"
+										class="Svg-sc-ytk21e-0 bneLcE home-icon me-2"
+										viewBox="0 0 24 24"
+									>
+										<path
+											d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z"
+										></path>
+									</svg>
+									Home</a
+								>
+							</div>
+							<div class="mb-2 d-flex align-items-center">
+								<a href="./search.html" class="text-light text-decoration-none">
+									<svg
+										data-encore-id="icon"
+										role="img"
+										aria-hidden="true"
+										class="Svg-sc-ytk21e-0 bneLcE search-icon me-2"
+										viewBox="0 0 24 24"
+									>
+										<path
+											d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"
+										></path>
+									</svg>
+									Cerca</a
+								>
+							</div>
+							<div class="mb-2 d-flex align-items-center">
+								<a href="#" class="text-white text-decoration-none">
+									<svg
+										data-encore-id="icon"
+										role="img"
+										aria-hidden="true"
+										viewBox="0 0 24 24"
+										class="Svg-sc-ytk21e-0 bneLcE me-2"
+									>
+										<path
+											d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z"
+										></path>
+									</svg>
+									La tua libreria</a
+								>
+							</div>
+						</div>
+						<div class="icone2">
+							<div class="mb-2">
+								<a href="#" class="text-white text-decoration-none">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="currentColor"
+										class="bi bi-plus-square-fill me-2"
+										viewBox="0 0 16 16"
+									>
+										<path
+											d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"
+										/>
+									</svg>
+									Crea playlist</a
+								>
+							</div>
+							<div class="mb-2">
+								<a href="#" class="text-white text-decoration-none">
+									<img
+										aria-hidden="true"
+										draggable="false"
+										loading="eager"
+										src="https://misc.scdn.co/liked-songs/liked-songs-64.png"
+										data-testid="entity-image"
+										alt="Brani che ti piacciono"
+										class="me-2 mMx2LUixlnN_Fu45JpFB iJp40IxKg6emF6KYJ414 Yn2Ei5QZn19gria6LjZj brani-like"
+										srcset="
+											https://misc.scdn.co/liked-songs/liked-songs-64.png   32w,
+											https://misc.scdn.co/liked-songs/liked-songs-64.png   64w,
+											https://misc.scdn.co/liked-songs/liked-songs-300.png 150w,
+											https://misc.scdn.co/liked-songs/liked-songs-300.png 300w,
+											https://misc.scdn.co/liked-songs/liked-songs-640.png 320w,
+											https://misc.scdn.co/liked-songs/liked-songs-640.png 640w
+										"
+									/>
+									Brani che ti piacciono</a
+								>
+							</div>
+							<div class="mb-2 pb-3 border-bottom">
+								<a href="#" class="text-white text-decoration-none d-flex">
+									<button class="d-flex align-items-center justify-content-center">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											class="bi bi-bookmark-fill"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2"
+											/>
+										</svg>
+									</button>
+									I tuoi episodi
+								</a>
+							</div>
+						</div>
+						<div id="to-fill"></div>
+						<div class="playlist overflow-y-auto">
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+							<p>La migliore playlist del mondo</p>
+						</div>
+					</div>
+					<div class="col-12 col-md-7">
+						<div class="row mt-3">
+							<div class="col d-flex justify-content-between">
+								<div class="d-flex flex-grow-1">
+									<a class="text-white" href="#"><i class="bi bi-caret-left"></i></a>
+									<a class="text-white" href="#"><i class="bi bi-caret-right"></i></a>
+								</div>
+								<div class="dropdown">
+									<button
+										class="btn btn-black dropdown-toggle"
+										type="button"
+										data-bs-toggle="dropdown"
+										aria-expanded="false"
+									>
+										<img
+											src="./assets/imgs/main/image-1.jpg"
+											alt="avatar"
+											class="avatar rounded-3"
+										/>
+										Utente
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Action</a></li>
+										<li>
+											<a class="dropdown-item" href="#">Another action</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">Something else here</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="annuncio p-3 d-none d-md-flex">
+								<div class="col-md-4">
+									<img
+										src="./assets/imgs/main/image-12.jpg"
+										alt="copertina album"
+										class="copertina img-fluid"
+									/>
+								</div>
+								<div class="col-md-7 ms-2">
+									<h6>ALBUM</h6>
+									<h2>VIOLA (Feat. Salmo)</h2>
+									<p>Fedez, Salmo</p>
+									<p>Ascolta il nuovo singolo di Fedez e Salmo!</p>
+									<button type="button" class="btn btn-success roundel px-4 text-black">
+										Play
+									</button>
+									<button type="button" class="btn btn-black border border-white roundel px-4 mx-1">
+										Salva
+									</button>
+									<a href="#" class="text-white mx-3"> <i class="bi bi-three-dots"></i></a>
+								</div>
+								<div class="col-1">
+									<button type="button" class="btn btn-dark nascondi text-secondary w-100">
+										X
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="col buonasera mt-5">
+							<h6 class="text-white">Buonasera</h6>
+							<div class="row">
+								<div class="col">
+									<div class="row">
+										<div class="col-6 col-md-4">
+											<div class="row">
+												<div class="col-3">
+													<img src="./assets/imgs/main/image-14.jpg" />
+												</div>
+												<div class="col-9 early">
+													<p class="text-white">early stage emily sindrome</p>
+												</div>
+											</div>
+										</div>
 
-                    <div class="col-6 col-md-4">
-                      <div class="row">
-                        <div class="col-3">
-                          <img src="./assets/imgs/search/image-12.jpg" />
-                        </div>
-                        <div class="col-9 early">
-                          <p class="text-white">Be the young</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <div class="row">
-                        <div class="col-3">
-                          <img src="./assets/imgs/main/image-19.jpg" />
-                        </div>
-                        <div class="col-9 early">
-                          <p class="text-white">saggio vibes</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <div class="row">
-                        <div class="col-3">
-                          <img src="./assets/imgs/main/image-15.jpg" />
-                        </div>
-                        <div class="col-9 early">
-                          <p class="text-white">Brani che ti piacciono</p>
-                        </div>
-                      </div>
-                    </div>
+										<div class="col-6 col-md-4">
+											<div class="row">
+												<div class="col-3">
+													<img src="./assets/imgs/search/image-12.jpg" />
+												</div>
+												<div class="col-9 early">
+													<p class="text-white">Be the young</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-6 col-md-4">
+											<div class="row">
+												<div class="col-3">
+													<img src="./assets/imgs/main/image-19.jpg" />
+												</div>
+												<div class="col-9 early">
+													<p class="text-white">saggio vibes</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-6 col-md-4">
+											<div class="row">
+												<div class="col-3">
+													<img src="./assets/imgs/main/image-15.jpg" />
+												</div>
+												<div class="col-9 early">
+													<p class="text-white">Brani che ti piacciono</p>
+												</div>
+											</div>
+										</div>
 
-                    <div class="col-6 col-md-4">
-                      <div class="row">
-                        <div class="col-3">
-                          <img src="./assets/imgs/main/image-18.jpg" />
-                        </div>
-                        <div class="col-9 early">
-                          <p class="text-white">2021 lol</p>
-                        </div>
-                      </div>
-                    </div>
+										<div class="col-6 col-md-4">
+											<div class="row">
+												<div class="col-3">
+													<img src="./assets/imgs/main/image-18.jpg" />
+												</div>
+												<div class="col-9 early">
+													<p class="text-white">2021 lol</p>
+												</div>
+											</div>
+										</div>
 
-                    <div class="col-6 col-md-4">
-                      <div class="row">
-                        <div class="col-3">
-                          <img src="./assets/imgs/main/image-2.jpg" />
-                        </div>
-                        <div class="col-9 early">
-                          <p class="text-white">Deep dive with Ali Abdaal</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col mt-5">
-              <div class="d-flex justify-content-between">
-                <h6>Altro di ciò che ti piace</h6>
-                <button
-                  type="button"
-                  class="btn btn-dark nascondi text-secondary"
-                >
-                  VISUALIZZA TUTTO
-                </button>
-              </div>
-              <div
-                class="row justify-content-center p-1 overflow-y-hidden flex-nowrap flex-lg-wrap"
-              >
-                <div class="col-4 col-md-2 p-1 m-1">
-                  <div class="card h-100">
-                    <img
-                      src="./assets/imgs/main/image-9.jpg"
-                      class="card-img-top"
-                      alt="music"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Hot hits Italia</h5>
-                      <p class="card-text">La playlist più calda del momento</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4 col-md-2 p-1 m-1">
-                  <div class="card h-100">
-                    <img
-                      src="./assets/imgs/main/image-8.jpg"
-                      class="card-img-top"
-                      alt="music"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">big on the internet</h5>
-                      <p class="card-text">iykyk</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4 col-md-2 p-1 m-1">
-                  <div class="card h-100">
-                    <img
-                      src="./assets/imgs/main/image-6.jpg"
-                      class="card-img-top"
-                      alt="music"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Pop rising</h5>
-                      <p class="card-text">The hits of tomorrow are on</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4 col-md-2 p-1 m-1">
-                  <div class="card h-100">
-                    <img
-                      src="./assets/imgs/main/image-7.jpg"
-                      class="card-img-top"
-                      alt="music"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Canzoni Tristi</h5>
-                      <p class="card-text">It's ok not to be ok :'(</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4 col-md-2 p-1 m-1">
-                  <div class="card h-100">
-                    <img
-                      src="./assets/imgs/main/image-11.jpg"
-                      class="card-img-top"
-                      alt="music"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">In tendenza</h5>
-                      <p class="card-text">Viral & Trending: le canzoni</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-2 d-none d-md-block bg-black">
-            <div class="d-flex justify-content-end">
-              <i class="bi bi-dash"></i>
-              <i class="bi bi-window-stack"></i>
-              <i class="bi bi-x-lg"></i>
-            </div>
+										<div class="col-6 col-md-4">
+											<div class="row">
+												<div class="col-3">
+													<img src="./assets/imgs/main/image-2.jpg" />
+												</div>
+												<div class="col-9 early">
+													<p class="text-white">Deep dive with Ali Abdaal</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col mt-5">
+							<div class="d-flex justify-content-between">
+								<h6>Altro di ciò che ti piace</h6>
+								<button type="button" class="btn btn-dark nascondi text-secondary">
+									VISUALIZZA TUTTO
+								</button>
+							</div>
+							<div
+								class="row justify-content-center p-1 overflow-y-hidden flex-nowrap flex-lg-wrap"
+							>
+								<div class="col-4 col-xl-2 p-1 m-1">
+									<div class="card h-100">
+										<img src="./assets/imgs/main/image-9.jpg" class="card-img-top" alt="music" />
+										<div class="card-body">
+											<h5 class="card-title">Hot hits Italia</h5>
+											<p class="card-text">La playlist più calda del momento</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-4 col-xl-2 p-1 m-1">
+									<div class="card h-100">
+										<img src="./assets/imgs/main/image-8.jpg" class="card-img-top" alt="music" />
+										<div class="card-body">
+											<h5 class="card-title">big on the internet</h5>
+											<p class="card-text">iykyk</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-4 col-xl-2 p-1 m-1">
+									<div class="card h-100">
+										<img src="./assets/imgs/main/image-6.jpg" class="card-img-top" alt="music" />
+										<div class="card-body">
+											<h5 class="card-title">Pop rising</h5>
+											<p class="card-text">The hits of tomorrow are on</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-4 col-xl-2 p-1 m-1">
+									<div class="card h-100">
+										<img src="./assets/imgs/main/image-7.jpg" class="card-img-top" alt="music" />
+										<div class="card-body">
+											<h5 class="card-title">Canzoni Tristi</h5>
+											<p class="card-text">It's ok not to be ok :'(</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-4 col-xl-2 p-1 m-1">
+									<div class="card h-100">
+										<img src="./assets/imgs/main/image-11.jpg" class="card-img-top" alt="music" />
+										<div class="card-body">
+											<h5 class="card-title">In tendenza</h5>
+											<p class="card-text">Viral & Trending: le canzoni</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-2 d-none d-md-block bg-black">
+						<div class="d-flex justify-content-end">
+							<i class="bi bi-dash"></i>
+							<i class="bi bi-window-stack"></i>
+							<i class="bi bi-x-lg"></i>
+						</div>
 
-            <div class="d-flex justify-content-between">
-              <p>Attività amici</p>
-              <p>
-                <i class="bi bi-person-add"></i>
-                <i class="bi bi-x-lg"></i>
-              </p>
-            </div>
-            <div class="row">
-              <div class="col-2">
-                <img
-                  src="./assets/imgs/main/image-16.jpg"
-                  class="avatar rounded-3"
-                  alt="avatar"
-                />
-              </div>
-              <div class="col-7 nascondi">
-                <p>
-                  Charlie Hookham<br />In camera • Yumi Zouma <br /><i
-                    class="bi bi-disc"
-                  ></i>
-                  EP III
-                </p>
-              </div>
-              <div class="col-3 nascondi">4 ore</div>
-            </div>
-            <div class="row">
-              <div class="col-2">
-                <img
-                  src="./assets/imgs/main/image-14.jpg"
-                  class="avatar rounded-3"
-                  alt="avatar"
-                />
-              </div>
-              <div class="col-7 nascondi">
-                <p>
-                  lightdark02<br />Aimed to Kill • Jade LeMac <br /><i
-                    class="bi bi-disc"
-                  ></i>
-                  Aimed to Kill
-                </p>
-              </div>
-              <div class="col-3 nascondi">8 ore</div>
-            </div>
-            <div class="row">
-              <div class="col-2">
-                <img
-                  src="./assets/imgs/main/image-18.jpg"
-                  class="avatar rounded-3"
-                  alt="avatar"
-                />
-              </div>
-              <div class="col-7 nascondi">
-                <p>
-                  Valeria Traverso<br />New Kings• Sleeping Wolf<br /><i
-                    class="bi bi-music-note-beamed"
-                  ></i>
-                  Twint Badass mood
-                </p>
-              </div>
-              <div class="col-3 nascondi">3 giorni</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div class="container-fluid">
-        <div class="row player">
-          <div class="col-md-4 d-flex align-items-center">
-            <div>
-              <!-- Cover image -->
-              <img id="player-cover-image" src="" alt="" />
-            </div>
-            <div class="mx-2">
-              <p class="m-0" id="player-title"></p>
-              <p class="m-0 "><a id="player-artist" href="##" class="text-decoration-underline-hover text-decoration-none text-body-secondary"></a></p>
-            </div>
-            <div class="m-3"><button
-              class="btn background-transparent border-0 d-flex p-0"><span class="icon-medium"><i class="si si-plus-circle"></i></span></button></div>
-          </div>
-          <div class="col-md-4">
-            <div class="audio-icons d-flex align-items-center justify-content-center column-gap-4">
-              <button class="btn background-transparent border-0 d-flex p-0" id="player-shuffle"><span class="icon-medium"><i class="si si-shuffle"></i></span></button>
-              <button class="btn background-transparent border-0 d-flex p-0" id="player-prev">
-              <span class="icon-medium "><i class="si si-prev"></i></span></button>
-              <button
-              id="player-play-pause-button"
-                class="btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle play-pause-button"
-                aria-label="Play"
-                data-testid="control-button-playpause"
-                style="--button-size: 32px"
-              >
-                <span class="icon-medium"><i class="si si-play"></i></span>
-              </button>
-              <button class="btn background-transparent border-0 d-flex p-0" id="player-next"><span class="icon-medium"><i class="si si-next"></i></span></button>
-              <button class="btn background-transparent border-0 d-flex p-0" id="player-loop"><span class="icon-medium"><i class="si si-loop"></i></span></button>
+						<div class="d-flex justify-content-between">
+							<p>Attività amici</p>
+							<p>
+								<i class="bi bi-person-add"></i>
+								<i class="bi bi-x-lg"></i>
+							</p>
+						</div>
+						<div class="row">
+							<div class="col-2">
+								<img src="./assets/imgs/main/image-16.jpg" class="avatar rounded-3" alt="avatar" />
+							</div>
+							<div class="col-7 nascondi">
+								<p>
+									Charlie Hookham<br />In camera • Yumi Zouma <br /><i class="bi bi-disc"></i>
+									EP III
+								</p>
+							</div>
+							<div class="col-3 nascondi">4 ore</div>
+						</div>
+						<div class="row">
+							<div class="col-2">
+								<img src="./assets/imgs/main/image-14.jpg" class="avatar rounded-3" alt="avatar" />
+							</div>
+							<div class="col-7 nascondi">
+								<p>
+									lightdark02<br />Aimed to Kill • Jade LeMac <br /><i class="bi bi-disc"></i>
+									Aimed to Kill
+								</p>
+							</div>
+							<div class="col-3 nascondi">8 ore</div>
+						</div>
+						<div class="row">
+							<div class="col-2">
+								<img src="./assets/imgs/main/image-18.jpg" class="avatar rounded-3" alt="avatar" />
+							</div>
+							<div class="col-7 nascondi">
+								<p>
+									Valeria Traverso<br />New Kings• Sleeping Wolf<br /><i
+										class="bi bi-music-note-beamed"
+									></i>
+									Twint Badass mood
+								</p>
+							</div>
+							<div class="col-3 nascondi">3 giorni</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="container-fluid">
+				<div class="row riproduci">
+					<div class="col-md-4 d-flex align-items-center">
+						<div>
+							<!-- Cover image -->
+							<img id="player-cover-image" src="" alt="" />
+						</div>
+						<div class="mx-2">
+							<p class="m-0" id="player-title"></p>
+							<p class="m-0">
+								<a
+									id="player-artist"
+									href="##"
+									class="text-decoration-underline-hover text-decoration-none text-body-secondary"
+								></a>
+							</p>
+						</div>
+						<div class="m-3">
+							<span class="icon-medium"><i class="si si-plus-circle"></i></span>
+						</div>
+						<div class="m-3">
+							<button class="btn background-transparent border-0 d-flex p-0">
+								<span class="icon-medium"><i class="si si-plus-circle"></i></span>
+							</button>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="audio-icons d-flex align-items-center justify-content-center column-gap-4">
+							<button class="btn background-transparent border-0 d-flex p-0" id="player-shuffle">
+								<span class="icon-medium"><i class="si si-shuffle"></i></span>
+							</button>
+							<button class="btn background-transparent border-0 d-flex p-0" id="player-prev">
+								<span class="icon-medium"><i class="si si-prev"></i></span>
+							</button>
+							<button
+								id="player-play-pause-button"
+								class="btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle play-pause-button"
+								aria-label="Play"
+								data-testid="control-button-playpause"
+								style="--button-size: 32px"
+							>
+								<span class="icon-medium"><i class="si si-play"></i></span>
+							</button>
+							<button class="btn background-transparent border-0 d-flex p-0" id="player-next">
+								<span class="icon-medium"><i class="si si-next"></i></span>
+							</button>
+							<button class="btn background-transparent border-0 d-flex p-0" id="player-loop">
+								<span class="icon-medium"><i class="si si-loop"></i></span>
+							</button>
+						</div>
+						<audio id="audio-player" class="d-none" controls>
+							<!-- inserire qui l'id del brano corrente -->
+							<source id="audio-source" src="" type="audio/mp3" />
+						</audio>
+						<div id="custom-audio-controls" class="mt-3 d-flex align-items-center column-gap-1">
+							<span id="current-time" class="time">0:00</span>
 
-            </div>
-            <audio id="audio-player" class="d-none" controls>
-              <!-- inserire qui l'id del brano corrente -->
-              <source id="audio-source" src="" type="audio/mp3" />
-            </audio>
-            <div id="custom-audio-controls" class="mt-3 d-flex align-items-center column-gap-1">
-              <span id="current-time" class="time">0:00</span>
-              
-              <input type="range" id="seek-bar" value="0" min="0" max="0" step="0.000001" class="w-100"/>
-              <span id="duration" class="time">0:00</span>
-            </div>
-          </div>
-          <div
-            class="col-md-4 d-flex flex-row align-items-center justify-content-end"
-          >
-            <button
-              class="btn background-transparent border-0 d-flex p-2"
-              data-testid="control-button-npv"
-              data-active="true"
-              aria-pressed="true"
-              aria-label="Vista Stai ascoltando"
-              data-encore-id="buttonTertiary"
-            >
-              <span
-                class="icon-medium"
-                ><i class="si si-play-square"></i></span>
-            </button>
-            <button
-              class="btn background-transparent border-0 d-flex p-2"
-              data-testid="lyrics-button"
-              data-active="false"
-              aria-pressed="false"
-              aria-label="Lyrics"
-              data-encore-id="buttonTertiary"
-            >
-              <span
-                class="icon-medium"
-                ><i class="si si-microphone"></i></span>
-            </button>
-            <button
-              class="btn background-transparent border-0 d-flex p-2"
-              data-testid="control-button-queue"
-              data-active="false"
-              aria-pressed="false"
-              aria-label="Coda"
-              data-encore-id="buttonTertiary"
-              id="player-quee"
-            >
-              <span class="icon-medium"><i class="si si-quee"></i></span>
-            </button>
-            <button
-              class="btn background-transparent border-0 d-flex p-2"
-              aria-label="Connetti a un dispositivo"
-              aria-expanded="false"
-              id="device-picker-icon-button"
-            >
-              <span class="icon-medium"><i class="si si-devices"></i></span>
-            </button>
-            <div
-              class="d-flex align-items-center"
-              data-testid="volume-bar"
-              dir="ltr"
-              style="--button-size: 32px; --slider-width: 100%"
-            >
-              <button
-                class="btn background-transparent border-0 d-flex p-2"
-                aria-label="Disattiva audio"
-                aria-describedby="volume-icon"
-                data-testid="volume-bar-toggle-mute-button"
-                id="volume-button"
-              >
-                <span class="icon-medium"><i class="si si-volume-medium"></i></span>
-              </button>
-              <div class="d-flex">
-                <div class="d-flex">
-                  <label class="hidden-visually d-flex"
-                    ><input type="range" min="0" max="1" step="0.01" value="0.6" id="volume-input"
-                  /></label>
-                  <div
-                    class="d-flex"
-                    data-testid="progress-bar"
-                    style="--progress-bar-transform: 100%"
-                  >
-                    <div
-                      class="d-flex"
-                      data-testid="progress-bar-background"
-                    >
-                      <div class=" d-flex">
-                        <div class=" d-flex"></div>
-                      </div>
-                      <div class="d-flex" ></div>
-                    </div>
-                    <div style="width: 100%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button
-              class="btn background-transparent border-0 d-flex p-2"
-              data-testid="pip-toggle-button"
-              data-active="false"
-              aria-pressed="false"
-              aria-label="Apri mini player"
-              data-encore-id="buttonTertiary"
-            >
-              <span class="icon-medium"><i class="si si-fullscreen"></i></span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script/icons.js"></script>
-    <script src="script/tools.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
-    <script src="script/player2.js"></script>
-  </body>
+							<input
+								type="range"
+								id="seek-bar"
+								value="0"
+								min="0"
+								max="0"
+								step="0.000001"
+								class="w-100"
+							/>
+							<span id="duration" class="time">0:00</span>
+						</div>
+					</div>
+					<div class="col-md-4 d-flex flex-row align-items-center justify-content-end">
+						<button
+							class="btn background-transparent border-0 d-flex p-2"
+							data-testid="control-button-npv"
+							data-active="true"
+							aria-pressed="true"
+							aria-label="Vista Stai ascoltando"
+							data-encore-id="buttonTertiary"
+						>
+							<span class="icon-medium"><i class="si si-play-square"></i></span>
+						</button>
+						<button
+							class="btn background-transparent border-0 d-flex p-2"
+							data-testid="lyrics-button"
+							data-active="false"
+							aria-pressed="false"
+							aria-label="Lyrics"
+							data-encore-id="buttonTertiary"
+						>
+							<span class="icon-medium"><i class="si si-microphone"></i></span>
+						</button>
+						<button
+							class="btn background-transparent border-0 d-flex p-2"
+							data-testid="control-button-queue"
+							data-active="false"
+							aria-pressed="false"
+							aria-label="Coda"
+							data-encore-id="buttonTertiary"
+							id="player-quee"
+						>
+							<span class="icon-medium"><i class="si si-quee"></i></span>
+						</button>
+						<button
+							class="btn background-transparent border-0 d-flex p-2"
+							aria-label="Connetti a un dispositivo"
+							aria-expanded="false"
+							id="device-picker-icon-button"
+						>
+							<span class="icon-medium"><i class="si si-devices"></i></span>
+						</button>
+						<div
+							class="d-flex align-items-center"
+							data-testid="volume-bar"
+							dir="ltr"
+							style="--button-size: 32px; --slider-width: 100%"
+						>
+							<button
+								class="btn background-transparent border-0 d-flex p-2"
+								aria-label="Disattiva audio"
+								aria-describedby="volume-icon"
+								data-testid="volume-bar-toggle-mute-button"
+								id="volume-button"
+							>
+								<span class="icon-medium"><i class="si si-volume-medium"></i></span>
+							</button>
+							<div class="d-flex">
+								<div class="d-flex">
+									<label class="hidden-visually d-flex"
+										><input type="range" min="0" max="1" step="0.01" value="0.6" id="volume-input"
+									/></label>
+									<div
+										class="d-flex"
+										data-testid="progress-bar"
+										style="--progress-bar-transform: 100%"
+									>
+										<div class="d-flex" data-testid="progress-bar-background">
+											<div class="d-flex">
+												<div class="d-flex"></div>
+											</div>
+											<div class="d-flex"></div>
+										</div>
+										<div style="width: 100%"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button
+							class="btn background-transparent border-0 d-flex p-2"
+							data-testid="pip-toggle-button"
+							data-active="false"
+							aria-pressed="false"
+							aria-label="Apri mini player"
+							data-encore-id="buttonTertiary"
+						>
+							<span class="icon-medium"><i class="si si-fullscreen"></i></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="./script/icons.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+		<script src="script/icons.js"></script>
+		<script src="script/tools.js"></script>
+		<script src="script/player.js"></script>
+		<script src="./script/homepage.js"></script>
+	</body>
 </html>

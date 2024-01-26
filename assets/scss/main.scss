@@ -74,6 +74,7 @@ $player-height: 72px;
   .icon-#{$name} {
     display: inline-flex;
     width: $size;
+    min-width: $size;
     // height: $size;
   }
 }
@@ -207,13 +208,6 @@ img.placeholder {
   transition: 250ms ease-out;
 }
 
-.player {
-  .play-pause-button {
-    width: var(--button-size);
-    height: var(--button-size);
-  }
-}
-
 .text-decoration-underline-hover:hover {
   text-decoration: underline !important;
 }
@@ -223,6 +217,11 @@ img.placeholder {
   bottom: 0;
   width: 100%;
   background-color: #000000;
+
+  .play-pause-button {
+    width: var(--button-size);
+    height: var(--button-size);
+  }
 }
 
 .avatar {
@@ -234,6 +233,7 @@ img.placeholder {
 }
 .prime-icone svg {
   min-width: 25px;
+  width: 25px;
 }
 .prime-icone a {
   font-size: 17px;
@@ -241,6 +241,7 @@ img.placeholder {
 }
 .icone2 svg {
   min-width: 25px;
+  max-width: 25px;
   height: 25px;
 }
 .icone2 a {
@@ -287,6 +288,18 @@ img.placeholder {
   min-width: 270px;
 }
 
+.circle-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
 input[type="range"] {
   height: 4px;
   appearance: none;
