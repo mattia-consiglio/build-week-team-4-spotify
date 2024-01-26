@@ -6,18 +6,38 @@ body {
   height: 100%;
 }
 
+#left-side {
+  background-color: black;
+  height: 100vh;
+}
+#left-side .list ul {
+  list-style-type: none;
+}
+#left-side .second-list ul {
+  list-style-type: none;
+}
+
 #center {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   min-height: 40vh;
   background-size: cover;
+  overflow-y: auto;
 }
 #center #tracce img {
   width: 25%;
 }
+#center #tracce:hover {
+  opacity: 20%;
+}
 #center .seguito i {
   margin-right: 80px;
+}
+
+#right-side {
+  background-color: black;
+  height: 100vh;
 }
 
 #artist-listeners {
@@ -39,4 +59,10 @@ button {
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 5px;
-}/*# sourceMappingURL=artist.css.map */
+}
+
+@media (max-width: 991px) {
+  #brani {
+    display: none;
+  }
+}/*# sourceMappingURL=Artist.css.map */

@@ -7,23 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.json();
     })
     .then((artistData) => {
-      // const body = document.getElementsByTagName("body");
       const container = document.getElementById("center");
       const imgElement = document.createElement("img");
       const artistName = document.getElementById("artist-name");
       const listeners = document.getElementById("artist-listeners");
       listeners.innerHTML = `${artistData.nb_fan} Ascoltatori mensili`;
       artistName.innerText = artistData.name;
+      const brani = document.getElementById("Brani");
 
-      // body.appendChild(container);
-      // verifiedAccount.innerHTML = `<i class="bi bi-patch-check-fill"></i> Account verificato`;
       container.style.backgroundImage = `url('${artistData.picture_xl}')`;
-      // imgElement.alt = artistData.name;
+
       artistName.textContent = artistData.name;
       container.appendChild(imgElement);
-      // container.appendChild(artistName);
-      // container.appendChild(listeners);
-      // container.appendChild(button);
+      brani.appendChild(imgElement);
     })
     .catch((error) => {
       console.error("Error fetching artist data:", error);
