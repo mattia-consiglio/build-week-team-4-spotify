@@ -128,7 +128,7 @@ window.onload = function () {
       title: data.title,
       cover: data.cover_small,
       artist: data.artist.name,
-      tipo: data.tipo,
+      tipo: data.type,
       id: data.id,
     };
     albumDuration.innerText = durationToString(data.duration, 1);

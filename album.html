@@ -11,14 +11,11 @@
   <body class="p-1" data-bs-theme="dark">
     <div class="container-fluid d-flex flex-column p-0">
       <div class="d-flex main-row">
-        <div class="bg-black d-none d-lg-block colonna1">
+        <div class="bg-black d-none d-lg-block colonna1 pe-3">
           <div class="mb-4 mt-4 prime-icone">
             <div class="mb-2 d-flex align-items-center"></div>
             <div class="mb-2 d-flex align-items-center">
-              <a
-                href="./index.html.html"
-                class="text-light text-decoration-none"
-              >
+              <a href="./index.html" class="text-light text-decoration-none">
                 <i class="si si-home"></i>
                 Home</a
               >
@@ -100,28 +97,7 @@
             </div>
           </div>
           <div id="to-fill"></div>
-          <div class="playlist overflow-y-auto">
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-            <p>La migliore playlist del mondo</p>
-          </div>
+          <div id="libraryplaylist" class="playlist overflow-y-auto ms-2"></div>
         </div>
         <div class="overflow-y-auto w-100 h-100 position-relative">
           <div class="container-fluid hero customBg" id="hero">
@@ -248,7 +224,7 @@
                       ></path>
                     </svg>
                   </span>
-                  <span class="icon-medium" id="addlibrary"
+                  <span class="icon-large" id="addlibrary"
                     ><i class="si si-love"></i
                   ></span>
                 </div>
@@ -573,6 +549,8 @@
     ></script>
     <script src="script/icons.js"></script>
     <script src="script/tools.js"></script>
+    <script src="script/library.js"></script>
+
     <script src="script/album.js"></script>
     <script src="script/player.js"></script>
   </body>
