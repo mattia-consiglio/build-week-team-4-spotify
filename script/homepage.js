@@ -83,6 +83,7 @@ const searchFetch = function (query) {
       // createCard(search)
       // createArtistCard(search)
       createAlbumCard(search);
+      creaAnnuncio(search);
     })
     .catch((err) => {
       console.log(err);
@@ -101,6 +102,79 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// function goToAlbumPage() {
-//   window.location.href = "album.html";
-// }
+const creaAnnuncio = function (Albumcard) {
+  let album = Albumcard.data.map((album) => ({
+    nome: album.album.title,
+    immagine: album.album.cover_medium,
+    tipo: album.album.type,
+    artista: album.artist.name,
+    idAlbum: album.album.id,
+  }));
+
+  let unici = album.reduce((acc, artista) => {
+    if (!acc.find((a) => a.nome === artista.nome)) {
+      acc.push(artista);
+    }
+    return acc;
+  }, []);
+
+  console.log(album);
+
+  const rigaAlbum = document.getElementById("annuncio");
+  rigaAlbum.innerHTML = "";
+  //   rigaAlbum.classList.add("row"); // Aggiungi la classe Bootstrap "row"
+
+  // Verifica se ci sono elementi in 'unici'
+  if (unici.length > 0) {
+    const alb = unici[0]; // Prendi solo il primo elemento di 'unici'
+    const albumCard = document.createElement("div");
+
+    albumCard.classList.add("col-md-12"); // Aggiungi la classe per impostare la larghezza
+
+    albumCard.innerHTML = `
+        <div class="d-flex"> <!-- Utilizza la flessibilità di Bootstrap -->
+          <div class="col-md-4">
+            <img
+              src="${alb.immagine}"
+              alt="copertina album"
+              class="copertina img-fluid"
+            />
+          </div>
+          <div class="col-md-7 ms-2">
+            <h6>ALBUM</h6>
+            <h2>${alb.nome}</h2>
+            <p>${alb.artista}</p>
+            <p>Ascolta il nuovo singolo di ${alb.artista}</p>
+            <button
+              type="button"
+              class="btn btn-success roundel px-4 text-black"
+              id="play-button"
+            >
+              Play
+            </button>
+            <button
+              type="button"
+              class="btn btn-black border border-white roundel px-4 mx-1"
+            >
+              Salva
+            </button>
+            <a href="#" class="text-white mx-3">
+              <i class="bi bi-three-dots"></i>
+            </a>
+            </div>
+                <div class="col-1">
+            <button
+              type="button"
+              class="btn btn-dark nascondi text-secondary w-100"
+              onclick="hideAnnouncement()"
+            >
+              X
+            </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+    rigaAlbum.appendChild(albumCard);
+  }
+};

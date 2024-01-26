@@ -243,11 +243,13 @@ audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
   display: flex !important;
 }
-svg {
+.colonna1, .colonna3, .overflow-y-auto.w-100.h-100.p-2{
+  svg {
   min-width: 20px;
   // fill: grey;
   margin-left: 15%;
   margin-right: 15%;
+}
 }
 // .avatar {
 //   width: 35px;

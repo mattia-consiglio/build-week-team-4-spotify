@@ -34,7 +34,7 @@ const createCard = function (m) {
   const container = document.getElementById("cont");
   container.innerHTML = "";
   const createCardArt = document.createElement("div");
-  createCardArt.classList.add("col-12", "col-md-5", "col-lg-6");
+  createCardArt.classList.add("col-12","col-xl-6");
   createCardArt.innerHTML = `
   
   <h1 class="mb-2">Artista</h1>

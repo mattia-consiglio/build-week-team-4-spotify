@@ -62,6 +62,7 @@ const toggleShuffle = () => {
 
 const updatePlayPauseButton = () => {
 	playPauseButtons.forEach(button => {
+		console.log(button);
 		const span = button.querySelector('span')
 		if (isPlaying) {
 			button.ariaLabel = 'Pause'
@@ -110,14 +111,14 @@ const playTrack = function (track) {
 	title.innerText = track.title
 	artist.innerText = track.artist.name
 	artist.href = './artist.html?artistId=' + track.artist.id
-	const itervalId = setInterval(() => {
-		if (audioLoaded) {
-			clearInterval(itervalId)
-			audioPlayer.play()
-			isPlaying = true
-			updatePlayPauseButton()
-		}
-	}, 100)
+	// const itervalId = setInterval(() => {
+	// 	if (audioLoaded) {
+	// 		clearInterval(itervalId)
+	// 		audioPlayer.play()
+	// 		isPlaying = true
+	// 		updatePlayPauseButton()
+	// 	}
+	// }, 100)
 }
 
 const playQuee = () => {}

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Search</title>
     <link rel="stylesheet" href="assets/scss/main.css" />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    /> -->
     <link rel="stylesheet" href="./assets/scss/search.css" />
   </head>
   <body class="p-1" data-bs-theme="dark">
@@ -511,197 +511,171 @@
       </div>
       <!-- </div> -->
       <footer>
-        <div class="row riproduci">
-          <div class="col-md-4 d-flex align-items-center">
-            <div>
-              <!-- Cover image -->
-              <img id="player-cover-image" src="" alt="" />
-            </div>
-            <div class="mx-2">
-              <p class="m-0" id="player-title"></p>
-              <p class="m-0">
-                <a
-                  id="player-artist"
-                  href="##"
-                  class="text-decoration-underline-hover text-decoration-none text-body-secondary"
-                ></a>
-              </p>
-            </div>
-            <div class="m-3">
-              <button class="btn background-transparent border-0 d-flex p-0">
-                <span class="icon-medium"
-                  ><i class="si si-plus-circle"></i
-                ></span>
-              </button>
-            </div>
-          </div>
-          <div
-            class="col-md-4 d-flex flex-column row-gap-2 justify-content-center"
-          >
-            <div
-              class="audio-icons d-flex align-items-center justify-content-center column-gap-4"
-            >
-              <button
-                class="btn background-transparent border-0 d-flex p-0"
-                id="player-shuffle"
-              >
-                <span class="icon-medium"><i class="si si-shuffle"></i></span>
-              </button>
-              <button
-                class="btn background-transparent border-0 d-flex p-0"
-                id="player-prev"
-              >
-                <span class="icon-medium"><i class="si si-prev"></i></span>
-              </button>
-              <button
-                id="player-play-pause-button"
-                class="btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle play-pause-button"
-                aria-label="Play"
-                data-testid="control-button-playpause"
-                style="--button-size: 32px"
-              >
-                <span class="icon-medium"><i class="si si-play"></i></span>
-              </button>
-              <button
-                class="btn background-transparent border-0 d-flex p-0"
-                id="player-next"
-              >
-                <span class="icon-medium"><i class="si si-next"></i></span>
-              </button>
-              <button
-                class="btn background-transparent border-0 d-flex p-0"
-                id="player-loop"
-              >
-                <span class="icon-medium"><i class="si si-loop"></i></span>
-              </button>
-            </div>
-            <audio id="audio-player" class="d-none" controls>
-              <!-- inserire qui l'id del brano corrente -->
-              <source id="audio-source" src="" type="audio/mp3" />
-            </audio>
-            <div
-              id="custom-audio-controls"
-              class="d-flex align-items-center column-gap-1"
-            >
-              <span id="current-time" class="time text-end">0:00</span>
+			<div class="row riproduci">
+				<div class="col-md-4 d-flex align-items-center">
+					<div>
+						<!-- Cover image -->
+						<img id="player-cover-image" src="" alt="" />
+					</div>
+					<div class="mx-2">
+						<p class="m-0" id="player-title"></p>
+						<p class="m-0">
+							<a
+								id="player-artist"
+								href="##"
+								class="text-decoration-underline-hover text-decoration-none text-body-secondary"
+							></a>
+						</p>
+					</div>
+					<div class="m-3">
+						<button class="btn background-transparent border-0 d-flex p-0">
+							<span class="icon-medium"><i class="si si-plus-circle"></i></span>
+						</button>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex flex-column row-gap-2 justify-content-center">
+					<div class="audio-icons d-flex align-items-center justify-content-center column-gap-4">
+						<button class="btn background-transparent border-0 d-flex p-0" id="player-shuffle">
+							<span class="icon-medium"><i class="si si-shuffle"></i></span>
+						</button>
+						<button class="btn background-transparent border-0 d-flex p-0" id="player-prev">
+							<span class="icon-medium"><i class="si si-prev"></i></span>
+						</button>
+						<button
+							id="player-play-pause-button"
+							class="btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle play-pause-button"
+							aria-label="Play"
+							data-testid="control-button-playpause"
+							style="--button-size: 32px"
+							data-action="playPause"
+							data-active-action="true"
+						>
+							<span class="icon-medium"><i class="si si-play"></i></span>
+						</button>
+						<button class="btn background-transparent border-0 d-flex p-0" id="player-next">
+							<span class="icon-medium"><i class="si si-next"></i></span>
+						</button>
+						<button class="btn background-transparent border-0 d-flex p-0" id="player-loop">
+							<span class="icon-medium"><i class="si si-loop"></i></span>
+						</button>
+					</div>
+					<audio id="audio-player" class="d-none" controls>
+						<!-- inserire qui l'id del brano corrente -->
+						<source id="audio-source" src="" type="audio/mp3" />
+					</audio>
+					<div id="custom-audio-controls" class="d-flex align-items-center column-gap-1">
+						<span id="current-time" class="time text-end">0:00</span>
 
-              <input
-                type="range"
-                id="seek-bar"
-                value="0"
-                min="0"
-                max="0"
-                step="0.000001"
-                class="w-100"
-              />
-              <span id="duration" class="time">0:00</span>
-            </div>
-          </div>
-          <div
-            class="col-md-4 d-flex flex-row align-items-center justify-content-end"
-          >
-            <button
-              class="btn background-transparent border-0 d-flex p-2"
-              data-testid="control-button-npv"
-              data-active="true"
-              aria-pressed="true"
-              aria-label="Vista Stai ascoltando"
-              data-encore-id="buttonTertiary"
-            >
-              <span class="icon-medium"><i class="si si-play-square"></i></span>
-            </button>
-            <button
-              class="btn background-transparent border-0 d-flex p-2"
-              data-testid="lyrics-button"
-              data-active="false"
-              aria-pressed="false"
-              aria-label="Lyrics"
-              data-encore-id="buttonTertiary"
-            >
-              <span class="icon-medium"><i class="si si-microphone"></i></span>
-            </button>
-            <button
-              class="btn background-transparent border-0 d-flex p-2"
-              data-testid="control-button-queue"
-              data-active="false"
-              aria-pressed="false"
-              aria-label="Coda"
-              data-encore-id="buttonTertiary"
-              id="player-quee"
-            >
-              <span class="icon-medium"><i class="si si-quee"></i></span>
-            </button>
-            <button
-              class="btn background-transparent border-0 d-flex p-2"
-              aria-label="Connetti a un dispositivo"
-              aria-expanded="false"
-              id="device-picker-icon-button"
-            >
-              <span class="icon-medium"><i class="si si-devices"></i></span>
-            </button>
-            <div
-              class="d-flex align-items-center"
-              data-testid="volume-bar"
-              dir="ltr"
-              style="--button-size: 32px; --slider-width: 100%"
-            >
-              <button
-                class="btn background-transparent border-0 d-flex p-2"
-                aria-label="Disattiva audio"
-                aria-describedby="volume-icon"
-                data-testid="volume-bar-toggle-mute-button"
-                id="volume-button"
-              >
-                <span class="icon-medium"
-                  ><i class="si si-volume-medium"></i
-                ></span>
-              </button>
-              <div class="d-flex">
-                <div class="d-flex">
-                  <label class="hidden-visually d-flex"
-                    ><input
-                      type="range"
-                      min="0"
-                      max="1"
-                      step="0.01"
-                      value="0.6"
-                      id="volume-input"
-                  /></label>
-                  <div
-                    class="d-flex"
-                    data-testid="progress-bar"
-                    style="--progress-bar-transform: 100%"
-                  >
-                    <div class="d-flex" data-testid="progress-bar-background">
-                      <div class="d-flex">
-                        <div class="d-flex"></div>
-                      </div>
-                      <div class="d-flex"></div>
-                    </div>
-                    <div style="width: 100%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button
-              class="btn background-transparent border-0 d-flex p-2"
-              data-testid="pip-toggle-button"
-              data-active="false"
-              aria-pressed="false"
-              aria-label="Apri mini player"
-              data-encore-id="buttonTertiary"
-            >
-              <span class="icon-medium"><i class="si si-fullscreen"></i></span>
-            </button>
-          </div>
-        </div>
-      </footer>
+						<input
+							type="range"
+							id="seek-bar"
+							value="0"
+							min="0"
+							max="0"
+							step="0.000001"
+							class="w-100"
+						/>
+						<span id="duration" class="time">0:00</span>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex flex-row align-items-center justify-content-end">
+					<button
+						class="btn background-transparent border-0 d-flex p-2"
+						data-testid="control-button-npv"
+						data-active="true"
+						aria-pressed="true"
+						aria-label="Vista Stai ascoltando"
+						data-encore-id="buttonTertiary"
+					>
+						<span class="icon-medium"><i class="si si-play-square"></i></span>
+					</button>
+					<button
+						class="btn background-transparent border-0 d-flex p-2"
+						data-testid="lyrics-button"
+						data-active="false"
+						aria-pressed="false"
+						aria-label="Lyrics"
+						data-encore-id="buttonTertiary"
+					>
+						<span class="icon-medium"><i class="si si-microphone"></i></span>
+					</button>
+					<button
+						class="btn background-transparent border-0 d-flex p-2"
+						data-testid="control-button-queue"
+						data-active="false"
+						aria-pressed="false"
+						aria-label="Coda"
+						data-encore-id="buttonTertiary"
+						id="player-quee"
+					>
+						<span class="icon-medium"><i class="si si-quee"></i></span>
+					</button>
+					<button
+						class="btn background-transparent border-0 d-flex p-2"
+						aria-label="Connetti a un dispositivo"
+						aria-expanded="false"
+						id="device-picker-icon-button"
+					>
+						<span class="icon-medium"><i class="si si-devices"></i></span>
+					</button>
+					<div
+						class="d-flex align-items-center"
+						data-testid="volume-bar"
+						dir="ltr"
+						style="--button-size: 32px; --slider-width: 100%"
+					>
+						<button
+							class="btn background-transparent border-0 d-flex p-2"
+							aria-label="Disattiva audio"
+							aria-describedby="volume-icon"
+							data-testid="volume-bar-toggle-mute-button"
+							id="volume-button"
+						>
+							<span class="icon-medium"><i class="si si-volume-medium"></i></span>
+						</button>
+						<div class="d-flex">
+							<div class="d-flex">
+								<label class="hidden-visually d-flex"
+									><input type="range" min="0" max="1" step="0.01" value="0.6" id="volume-input"
+								/></label>
+								<div
+									class="d-flex"
+									data-testid="progress-bar"
+									style="--progress-bar-transform: 100%"
+								>
+									<div class="d-flex" data-testid="progress-bar-background">
+										<div class="d-flex">
+											<div class="d-flex"></div>
+										</div>
+										<div class="d-flex"></div>
+									</div>
+									<div style="width: 100%"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button
+						class="btn background-transparent border-0 d-flex p-2"
+						data-testid="pip-toggle-button"
+						data-active="false"
+						aria-pressed="false"
+						aria-label="Apri mini player"
+						data-encore-id="buttonTertiary"
+					>
+						<span class="icon-medium"><i class="si si-fullscreen"></i></span>
+					</button>
+				</div>
+			</div>
+		</footer>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="./script/icons.js"></script>
+    <script src="./script/tools.js"></script>
+    <script src="./script/player.js"></script>
     <script src="./script/search.js"></script>
     <script src="./script/library.js"></script>
   </body>
