@@ -65,16 +65,23 @@ $icon-sizes: (
   "small": 14px,
 );
 
+$player-height: 72px;
+.main-row {
+  height: calc(100vh - $player-height);
+}
+
 @each $name, $size in $icon-sizes {
   .icon-#{$name} {
     display: inline-flex;
     width: $size;
-    height: $size;
+    min-width: $size;
+    // height: $size;
   }
 }
 
 svg {
   fill: currentColor;
+  width: 100%;
 }
 
 .main-actions {
@@ -94,6 +101,7 @@ svg {
       svg {
         width: 24px;
       }
+
       &:hover {
         transform: scale(1.05);
         color: #000;
@@ -198,4 +206,170 @@ img.placeholder {
 .customBg {
   background-color: $body-bg-dark;
   transition: 250ms ease-out;
+}
+
+.text-decoration-underline-hover:hover {
+  text-decoration: underline !important;
+}
+.riproduci {
+  position: fixed;
+  height: $player-height;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+
+  .play-pause-button {
+    width: var(--button-size);
+    height: var(--button-size);
+  }
+}
+
+.avatar {
+  width: 35px;
+}
+
+.nascondi {
+  font-size: 9px;
+}
+.prime-icone svg {
+  min-width: 25px;
+  width: 25px;
+}
+.prime-icone a {
+  font-size: 17px;
+  margin-left: 10px;
+}
+.icone2 svg {
+  min-width: 25px;
+  max-width: 25px;
+  height: 25px;
+}
+.icone2 a {
+  font-size: 17px;
+
+  margin-left: 10px;
+}
+.icone2 button {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: rgb(10, 75, 10);
+  margin-right: 12px;
+}
+.icone2 button svg {
+  width: 12.5px;
+  height: 12.5px;
+  fill: #1fdf64;
+}
+.brani-like {
+  max-width: 25px;
+  max-height: 25px;
+}
+.playlist {
+  height: 580px;
+}
+
+.playlist p {
+  font-size: 17px;
+  margin-bottom: 13px;
+  margin-left: 10px;
+  color: rgb(180, 180, 180);
+}
+.nascondi {
+  font-size: 15px;
+  color: rgb(180, 180, 180);
+  // width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.colonna3,
+.colonna1 {
+  min-width: 270px;
+}
+
+.circle-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+input[type="range"] {
+  height: 4px;
+  appearance: none;
+  width: 100%;
+  margin: 2px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+  background-color: transparent;
+  position: relative;
+
+  &::-webkit-slider-thumb,
+  &::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-slider-thumb {
+    height: 12px;
+    width: 12px;
+    margin-top: -4px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    z-index: 20;
+    opacity: 0;
+  }
+
+  &::-webkit-slider-runnable-track {
+    background-color: rgba(255, 255, 255, 30%);
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    height: 4px;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  &::-moz-range-track {
+    background-color: #c1c1c1;
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    height: 5px;
+    width: 100%;
+    border: solid #ececec 3px;
+  }
+
+  &::before {
+    content: "";
+    width: calc(var(--value));
+    height: 4px;
+    background-color: white;
+    position: absolute;
+    z-index: 10;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    // background: $primary;
+    &::before {
+      background: $primary;
+    }
+
+    &::-webkit-slider-thumb {
+      opacity: 1;
+    }
+  }
+}
+
+.time {
+  min-width: 35px;
+  font-size: 12px;
 }
