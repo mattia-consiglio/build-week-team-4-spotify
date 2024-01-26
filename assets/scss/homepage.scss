@@ -11,7 +11,7 @@ body {
 }
 
 .nascondi {
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .annuncio {
@@ -22,9 +22,9 @@ body {
   width: 50px;
 }
 
-.early {
-  background-color: #2d2d2d;
-}
+// .early {
+//   background-color: #2d2d2d;
+// }
 
 .card {
   background-color: #171717;
@@ -80,4 +80,9 @@ audio::-webkit-media-controls-time-remaining-display {
   margin-left: 0;
   margin-right: 0;
   width: 20px;
+}
+
+.col-4,
+.col-7 {
+  max-width: 100%;
 }
