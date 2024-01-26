@@ -99,7 +99,10 @@ window.onload = function () {
 			container.appendChild(row)
 		})
 	}
-
+	let dataLibrary = {}
+	document.getElementById('addlibrary').addEventListener('click', function () {
+		addlibrary(dataLibrary)
+	})
 	const fillInfo = data => {
 		albumTitle.innerText = data.title
 		albumCover.src = data.cover_xl
@@ -109,8 +112,16 @@ window.onload = function () {
 		releaseDate.innerText = data.release_date.split('-')[0]
 		artistImg.src = data.artist.picture_small
 		artistImg.alt = data.artist.name
+		dataLibrary = {
+			title: data.title,
+			cover: data.cover_small,
+			artist: data.artist.name,
+			tipo: data.tipo,
+			id: data.id,
+		}
 		albumDuration.innerText = durationToString(data.duration, 1)
 		createTracksRows(data.tracks.data)
+
 		albumCover.addEventListener('load', () => {
 			setTimeout(() => {
 				const avgColor = getMostRecurrentColor(albumCover)

@@ -1,253 +1,253 @@
 .immagine {
-	width: 300px;
-	height: 300px;
+  width: 300px;
+  height: 300px;
 }
 
 .icon {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	left: 5px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
 }
 
 #search-input {
-	padding-left: 25px;
-	/* text-align: center; */
-	min-width: 100%;
+  padding-left: 25px;
+  /* text-align: center; */
+  min-width: 100%;
 }
 
 .input-container {
-	position: relative;
-	width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
-	.input-container {
-		width: 200px;
-	}
+  .input-container {
+    width: 200px;
+  }
 }
 // input::placeholder {
 //   width: 200px;
 // }
 
 form {
-	width: 100%;
+  width: 100%;
 }
 
 .icona-spotify {
-	width: 20px;
+  width: 20px;
 }
 
 .riga-card {
-	&:hover {
-		.svg-play {
-			opacity: 1;
-		}
-		.plus-svg {
-			opacity: 1;
-		}
-	}
-	&:hover {
-		background-color: rgb(53, 53, 53);
-	}
+  &:hover {
+    .svg-play {
+      opacity: 1;
+    }
+    .plus-svg {
+      opacity: 1;
+    }
+  }
+  &:hover {
+    background-color: rgb(53, 53, 53);
+  }
 }
 .artist-card {
-	border: none;
-	background-color: rgb(22, 22, 22);
-	&:hover {
-		background-color: rgb(53, 53, 53);
-		#playbut {
-			opacity: 1;
-		}
-	}
+  border: none;
+  background-color: rgb(22, 22, 22);
+  &:hover {
+    background-color: rgb(53, 53, 53);
+    #playbut {
+      opacity: 1;
+    }
+  }
 }
 .artist-img {
-	max-width: 80%;
-	border-radius: 50%;
+  max-width: 80%;
+  border-radius: 50%;
 }
 .cont-img {
-	position: relative;
+  position: relative;
 }
 #playbut {
-	opacity: 0;
-	width: 60px;
-	height: 60px;
-	fill: #121212 !important;
-	background-color: #1fdf64;
-	border: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	bottom: 0%;
-	right: 0%;
-	margin-right: 15%;
-	margin-top: 5%;
-	&:hover {
-		transform: scale(1.1);
-	}
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  fill: #121212 !important;
+  background-color: #1fdf64;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  margin-right: 15%;
+  margin-top: 5%;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 .album-img {
-	max-width: 80%;
+  max-width: 80%;
 }
 .cont-img1 {
-	position: relative;
+  position: relative;
 }
 #playbut1 {
-	opacity: 0;
-	width: 60px;
-	height: 60px;
-	fill: #121212 !important;
-	background-color: #1fdf64;
-	border: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	bottom: 0%;
-	right: 0%;
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  fill: #121212 !important;
+  background-color: #1fdf64;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
 
-	margin-right: 15%;
-	margin-bottom: 5%;
-	&:hover {
-		transform: scale(1.1);
-	}
+  margin-right: 15%;
+  margin-bottom: 5%;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .svg-art {
-	fill: #121212;
-	width: 23px;
-	height: 23px;
+  fill: #121212;
+  width: 23px;
+  height: 23px;
 }
 .album-card {
-	border: none;
-	background-color: rgb(22, 22, 22);
-	&:hover {
-		background-color: rgb(53, 53, 53);
-		#playbut1 {
-			opacity: 1;
-		}
-	}
+  border: none;
+  background-color: rgb(22, 22, 22);
+  &:hover {
+    background-color: rgb(53, 53, 53);
+    #playbut1 {
+      opacity: 1;
+    }
+  }
 }
 .plus-svg {
-	opacity: 0;
+  opacity: 0;
 }
 .name-dec {
-	text-decoration: none;
-	&:hover {
-		text-decoration: underline;
-	}
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .cont-svg-playbutton {
-	position: relative;
+  position: relative;
 }
 .svg-play {
-	border: none;
-	background-color: transparent;
-	width: 40px;
-	opacity: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (min-width: 768px) {
-	.altezza-brani {
-		overflow-y: auto;
-		max-height: 240px;
-	}
+  .altezza-brani {
+    overflow-y: auto;
+    max-height: 240px;
+  }
 }
 @media screen and (max-width: 400px) {
-	.song-title {
-		width: 100px;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
+  .song-title {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 @media screen and (max-width: 420px) {
-	#playbut1 {
-		opacity: 0;
-		width: 45px;
-		height: 45px;
-	}
-	#playbut {
-		opacity: 0;
-		width: 45px;
-		height: 45px;
-	}
+  #playbut1 {
+    opacity: 0;
+    width: 45px;
+    height: 45px;
+  }
+  #playbut {
+    opacity: 0;
+    width: 45px;
+    height: 45px;
+  }
 }
 
 @media screen and (min-width: 400px) and (max-width: 500px) {
-	.song-title {
-		width: 150px;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
+  .song-title {
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 body {
-	font-family: Circular;
-	background-color: #121212;
+  font-family: Circular;
+  background-color: #121212;
 }
 
 .copertina {
-	width: 200px;
+  width: 200px;
 }
 
 .annuncio {
-	background: linear-gradient(to bottom, #212121, #000000);
+  background: linear-gradient(to bottom, #212121, #000000);
 }
 
 .buonasera img {
-	width: 50px;
+  width: 50px;
 }
 
 .early {
-	background-color: #2d2d2d;
+  background-color: #2d2d2d;
 }
 
 .card {
-	background-color: #171717;
+  background-color: #171717;
 }
 
 footer img {
-	width: 40px;
+  width: 40px;
 }
 
 .roundel {
-	border-top-right-radius: 1rem;
-	border-bottom-right-radius: 1rem;
-	border-top-left-radius: 1rem;
-	border-bottom-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 /* Nasconde i controlli dell'elemento audio tranne la barra dei secondi */
 audio {
-	width: 100%; /* Imposta la larghezza desiderata */
+  width: 100%; /* Imposta la larghezza desiderata */
 }
 
 audio::-webkit-media-controls {
-	display: none !important;
+  display: none !important;
 }
 
 audio::-webkit-media-controls-panel {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
-	display: flex !important;
+  display: flex !important;
 }
 svg {
-	min-width: 20px;
-	// fill: grey;
-	margin-left: 15%;
-	margin-right: 15%;
+  min-width: 20px;
+  // fill: grey;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 // .avatar {
 //   width: 35px;
@@ -311,18 +311,18 @@ svg {
 //   min-width: 270px;
 // }
 .play {
-	fill: black;
-	border-radius: 1rem;
+  fill: black;
+  border-radius: 1rem;
 }
 
 .altre svg {
-	margin-left: -5%;
-	margin-right: -5%;
-	width: 15px;
+  margin-left: -5%;
+  margin-right: -5%;
+  width: 15px;
 }
 
 .d-none svg {
-	margin-left: 0;
-	margin-right: 0;
-	width: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 20px;
 }
