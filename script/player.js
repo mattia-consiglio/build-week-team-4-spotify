@@ -4,7 +4,9 @@ const currentTimeDisplay = document.getElementById('current-time')
 const progressInput = document.getElementById('seek-bar')
 const durationDisplay = document.getElementById('duration')
 const audioSource = document.getElementById('audio-source')
-const playPauseButton = document.getElementById('player-play-pause-button')
+const playPauseButtons = document.querySelectorAll(
+	'button[data-action="playPause"][data-active-action="true"]'
+)
 const prevButton = document.getElementById('player-prev')
 const nextButton = document.getElementById('player-next')
 const volumeInput = document.getElementById('volume-input')
@@ -17,11 +19,21 @@ let audioLoaded = false
 let isChangingTime = false
 let minVolume = 0.25
 let volume = 0.6
+let shuffleActive = false
+let isPlaying = false
 
-let currentTrack = 0
-const tracks = []
+let currentTrackId = null
+const sourceTracks = []
+const extractionTracks = []
 const quee = []
 
+const playerSetting = {
+	shuffle: false,
+	repeat: false,
+	volume: 0.6,
+}
+
+// genera array di riproduzione
 const generateTracks = data => {
 	data.forEach(track => {
 		const trackObject = {
@@ -34,9 +46,31 @@ const generateTracks = data => {
 			},
 			cover: track.album.cover_small,
 		}
-		tracks.push(trackObject)
+		sourceTracks.push(trackObject)
 	})
-	console.log(tracks)
+	console.log(sourceTracks)
+}
+
+const toggleShuffle = () => {
+	shuffleActive = !shuffleActive
+	if (shuffleActive) {
+		shuffleButton.classList.add('active')
+	} else {
+		shuffleButton.classList.remove('active')
+	}
+}
+
+const updatePlayPauseButton = () => {
+	playPauseButtons.forEach(button => {
+		const span = button.querySelector('span')
+		if (isPlaying) {
+			button.ariaLabel = 'Pause'
+			span.innerHTML = '<i class="si si-pause"></i>'
+		} else {
+			button.ariaLabel = 'Play'
+			span.innerHTML = '<i class="si si-play"></i>'
+		}
+	})
 }
 
 // Formatta il tempo nel formato mm:ss
@@ -67,6 +101,7 @@ audioPlayer.addEventListener('timeupdate', function () {
 
 //cambia la sorgente audio
 const playTrack = function (track) {
+	currentTrackId = track.id
 	audioLoaded = false
 	audioSource.src = track.preview
 	audioPlayer.load()
@@ -75,19 +110,30 @@ const playTrack = function (track) {
 	title.innerText = track.title
 	artist.innerText = track.artist.name
 	artist.href = './artist.html?artistId=' + track.artist.id
+	const itervalId = setInterval(() => {
+		if (audioLoaded) {
+			clearInterval(itervalId)
+			audioPlayer.play()
+			isPlaying = true
+			updatePlayPauseButton()
+		}
+	}, 100)
 }
 
-playPauseButton.addEventListener('click', () => {
-	const span = playPauseButton.querySelector('span')
-	if (playPauseButton.ariaLabel === 'Play' && audioLoaded && audioPlayer.paused) {
-		playPauseButton.ariaLabel = 'Pause'
-		span.innerHTML = '<i class="si si-pause"></i>'
-		audioPlayer.play()
-	} else {
-		playPauseButton.ariaLabel = 'Play'
-		span.innerHTML = '<i class="si si-play"></i>'
-		audioPlayer.pause()
-	}
+const playQuee = () => {}
+
+playPauseButtons.forEach(button => {
+	button.addEventListener('click', () => {
+		console.log('click')
+		if (button.ariaLabel === 'Play' && audioLoaded && audioPlayer.paused) {
+			audioPlayer.play()
+			isPlaying = true
+		} else {
+			audioPlayer.pause()
+			isPlaying = false
+		}
+		updatePlayPauseButton()
+	})
 })
 
 const setVolume = vol => {
@@ -111,7 +157,14 @@ const setVolume = vol => {
 
 // Inizializza il player
 const initializePlayer = () => {
-	setVolume(volumeInput.value)
+	const localSettings = localStorage.getItem('playerSetting')
+	if (localSettings) {
+		const localSettings = JSON.parse(localSettings)
+		playerSetting.shuffle = localSettings.shuffle
+		playerSetting.repeat = localSettings.repeat
+		playerSetting.volume = localSettings.volume
+	}
+	setVolume(playerSetting.volume)
 	playTrack({
 		id: 568120922,
 		preview: 'https://cdns-preview-b.dzcdn.net/stream/c-bcf686b9b7b146a3ce3d160cbfa2d1b5-7.mp3',

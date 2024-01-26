@@ -195,12 +195,14 @@
 							<!-- Bottoni azione : Play, shuffle, like -->
 							<div class="row py-4">
 								<div class="col main-actions">
-									<button class="btn btn-primary rounded-circle play-btn action">
-										<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24">
-											<path
-												d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
-											></path>
-										</svg>
+									<button
+										class="btn btn-primary rounded-circle play-btn action"
+										data-action="playPause"
+										data-active-action="true"
+									>
+										<span class="icon-large justify-content-center"
+											><i class="si si-play"></i
+										></span>
 									</button>
 									<span class="icon-large action">
 										<svg
@@ -385,7 +387,8 @@
 							<span class="icon-medium"><i class="si si-prev"></i></span>
 						</button>
 						<button
-							id="player-play-pause-button"
+							data-action="playPause"
+							data-active-action="true"
 							class="btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle play-pause-button"
 							aria-label="Play"
 							data-testid="control-button-playpause"
