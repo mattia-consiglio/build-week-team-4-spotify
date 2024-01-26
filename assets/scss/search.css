@@ -171,21 +171,6 @@ form {
           transform: translate(-50%, -50%);
 }
 
-.circle-btn {
-  width: 32px;
-  height: 32px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
 @media screen and (min-width: 768px) {
   .altezza-brani {
     overflow-y: auto;
