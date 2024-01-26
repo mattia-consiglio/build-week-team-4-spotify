@@ -144,7 +144,7 @@ const creaAnnuncio = function (Albumcard) {
             <h6>ALBUM</h6>
             <h2>${alb.nome}</h2>
             <p>${alb.artista}</p>
-            <p>Ascolta il nuovo singolo di ${alb.artista}</p>
+            <p>Ascolta il nuovo singolo dei ${alb.artista}</p>
             <button
               type="button"
               class="btn btn-success roundel px-4 text-black"
