@@ -240,3 +240,14 @@ const removePlaceholders = () => {
     placeholder.classList.remove("placeholder", "placeholder-wave");
   });
 };
+
+const updateRangeInput = (input) => {
+  const max = input.max;
+  const min = input.min;
+  const value = input.value;
+  let perc = 0;
+  if (value > min) {
+    perc = (value - min) / (max - min);
+  }
+  input.style.setProperty("--value", perc * 100 + "%");
+};

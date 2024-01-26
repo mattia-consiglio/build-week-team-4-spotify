@@ -51,15 +51,16 @@ window.onload = function () {
       row.innerHTML = `
 		<div class="table-cell" role="gridcell" aria-colindex="1">
 			<button class="btn bg-transparent"><span class="icon-medium">
-				<i class="si si-play"></i></svg>
+				<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24"
+													class="Svg-sc-ytk21e-0 bneLcE"><path
+														d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+													</path></svg>
 											</span></button>
 										<div>${i + 1}</div>
 									</div>
 									<div class="table-cell" role="gridcell" aria-colindex="2">
 										<div class="iCQtmPqY0QvkumAOuCjr"><a class="text-decoration-none text-body" draggable="false" href="#track" tabindex="-1">
-												<div class="d-block text-truncate" style="max-width: 230px;" dir="auto" data-encore-id="text">${
-                          track.title
-                        }</div>
+												<div class="" dir="auto" data-encore-id="text">${track.title}</div>
 											</a><span class="" data-encore-id="text"><span><a class="text-decoration-none text-body-secondary"
 														dir="auto" href="./artist.html?id=${track.artist.id}" tabindex="-1">${
         track.artist.name
@@ -87,6 +88,7 @@ window.onload = function () {
 														d="M3 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm6.5 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM16 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
 													</path>
 												</svg>
+                        
 											</span>
                       </button>
                       <ul class="dropdown-menu z-1">

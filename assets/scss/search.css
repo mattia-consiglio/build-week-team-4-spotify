@@ -6,7 +6,8 @@
 .icon {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   left: 5px;
 }
 
@@ -71,9 +72,15 @@ form {
   fill: #121212 !important;
   background-color: #1fdf64;
   border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   bottom: 0%;
   right: 0%;
@@ -81,7 +88,8 @@ form {
   margin-top: 5%;
 }
 #playbut:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .album-img {
@@ -99,9 +107,15 @@ form {
   fill: #121212 !important;
   background-color: #1fdf64;
   border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   bottom: 0%;
   right: 0%;
@@ -109,7 +123,8 @@ form {
   margin-bottom: 5%;
 }
 #playbut1:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .svg-art {
@@ -152,15 +167,22 @@ form {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .circle-btn {
   width: 32px;
   height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -208,6 +230,7 @@ body {
 }
 
 .annuncio {
+  background: -webkit-gradient(linear, left top, left bottom, from(#212121), to(#000000));
   background: linear-gradient(to bottom, #212121, #000000);
 }
 
@@ -244,12 +267,15 @@ audio::-webkit-media-controls {
 }
 
 audio::-webkit-media-controls-panel {
+  display: -webkit-box;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
 }
 
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
+  display: -webkit-box !important;
   display: flex !important;
 }
 
